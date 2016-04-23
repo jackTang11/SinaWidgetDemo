@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD39B" >
+    <com.sina.sinawidgetdemo.custom.view.RoundProgressBar2
+        xmlns:android_custom="http://schemas.android.com/apk/res/com.sina.sinawidgetdemo"
+        android:id="@+id/roundProgressBar"
+        android_custom:style="STROKE"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android_custom:roundColor="#AA000000"
+        android_custom:roundProgressBgColor="#88FFFFFF"
+        android_custom:roundProgressColor="#F74D4D"
+        android_custom:roundWidth="12dp"
+        android_custom:textColor="@color/white"
+        android_custom:textDecimalSize="15sp"
+        android_custom:textIntegerSize="20sp"
+        android_custom:textIsDisplayable="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="圆形进度条："
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/roundProgressBar"
+        android:layout_alignBottom="@id/roundProgressBar"
+        android:gravity="center_vertical"
+        android:textColor="#474747" />
+     <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="扫描"
+        android:layout_below="@id/tv_desc"
+        android:layout_alignLeft="@id/tv_desc"
+        android:textColor="#474747" />
+
+</RelativeLayout>

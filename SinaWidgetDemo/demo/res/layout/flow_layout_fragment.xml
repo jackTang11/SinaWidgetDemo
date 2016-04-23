@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="说明：\n组件按照加入的先后顺序按照设置的对齐方式从左向右排列，\n一行排满到下一行开始继续排列，\n可以设置最多显示行数"
+        android:textColor="#474747" />
+
+    <com.sina.sinawidgetdemo.custom.view.FlowLayout
+        xmlns:f="http://schemas.android.com/apk/res/com.sina.sinawidgetdemo"
+        android:id="@+id/flow_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        f:debugDraw="false"
+        f:horizontalSpacing="10dp"
+        f:maxLines="2"
+        f:direction="horizontal"
+        f:verticalSpacing="12dp" />
+
+</LinearLayout>

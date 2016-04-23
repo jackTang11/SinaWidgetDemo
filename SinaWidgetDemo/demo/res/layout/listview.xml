@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="match_parent" -->
+<!-- android:orientation="vertical" > -->
+
+<com.sina.sinawidgetdemo.custom.view.ScrolledListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:cacheColorHint="#00000000"
+    android:divider="#00000000"
+    android:fadingEdge="none"
+    android:footerDividersEnabled="true"
+    android:headerDividersEnabled="false"
+    android:listSelector="#00000000"
+    android:persistentDrawingCache="animation"
+    android:scrollingCache="true" >
+
+</com.sina.sinawidgetdemo.custom.view.ScrolledListView>
+<!-- </LinearLayout> -->

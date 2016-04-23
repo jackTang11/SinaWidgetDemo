@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#21c450"
+    tools:ignore="ContentDescription" >
+    
+   <LinearLayout android:orientation="vertical"
+        android:id="@+id/guide2_layout1"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
+	    <ImageView
+	            android:id="@+id/guide2_image_1"
+	            android:layout_width="300dp"
+	            android:layout_height="300dp"
+	            android:src="@drawable/guide2_news" />
+	    
+	    <ImageView
+	            android:id="@+id/guide2_image_2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/guide2_focus" />
+	     <ImageView
+	            android:id="@+id/guide2_image_3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/guide2_ss" />
+	</LinearLayout>
+    
+     <ImageView
+	            android:id="@+id/guide2_image_4"
+	            android:layout_width="80dp"
+	            android:layout_height="80dp"
+	            android:layout_alignRight="@id/guide2_layout1"
+	            android:layout_alignTop="@id/guide2_layout1"
+	            android:src="@drawable/guide2_nx" />
+
+</RelativeLayout>

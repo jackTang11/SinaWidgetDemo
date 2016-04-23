@@ -1,0 +1,106 @@
+-dontoptimize
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+-dontwarn
+-dontwarn com.alibaba.fastjson.**
+-dontwarn android.support.**
+-dontwarn com.tendcloud.tenddata.**
+-dontwarn com.umeng.**
+-dontwarn org.apache.commons.httpclient.**
+-dontwarn com.google.gson.**
+-dontwarn com.android.overlay.**
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-keepattributes InnerClasses,LineNumberTable
+-keepattributes Signature
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.app.View
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+
+
+-keep class cn.sharesdk.**{*;}
+-keep class com.alibaba.**{*;}
+-keep class com.nostra13.**{*;}
+-keep class com.alibaba.fastjson.** { *; }
+-keep class com.sina.custom.**{*;}
+-keep class com.tencent.**{*;}
+-keep class com.sina.weibo.sdk.**{*;}
+-keep class com.tencent.weibo.**{*;}
+-keep class org.apache.commons.httpclient.**{*;}
+-keep class com.google.gson.**{*;}
+-keep class com.android.overlay.**{*;}
+
+-keep class com.handmark.pulltorefresh.**{*;}
+-keep class com.sina.push.spns.**{*;}
+-keep class com.sina.sinagame.push.**{*;}
+-keep class com.umeng.**{*;}
+-keep class com.db4o.**{*;}
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class **.R$* {   
+*;   
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keep class * implements java.io.Serializable {  
+   *; 
+}  
+
+-keep class * implements android.os.Parcelable {  
+   *; 
+}  
+  
+-keepclassmembers class * implements java.io.Serializable {  
+    static final long serialVersionUID;  
+    private static final java.io.ObjectStreamField[] serialPersistentFields;  
+    private void writeObject(java.io.ObjectOutputStream);  
+    private void readObject(java.io.ObjectInputStream);  
+    java.lang.Object writeReplace();  
+    java.lang.Object readResolve();  
+}  
+
+
+-keep public class com.umeng.example.R$*{
+    public static final int *;
+}
+
+-keepclassmembers class * {
+   public <init>(org.json.JSONObject);
+}
+
+-keep public class com.tendcloud.tenddata.** { public protected *;}
+-keep public class com.umeng.** { public protected *;}
+
+-keep public class pl.droidsonroids.gif.GifIOException{<init>(int);}
+-keep class pl.droidsonroids.gif.GifInfoHandle{<init>(long,int,int,int);}
+

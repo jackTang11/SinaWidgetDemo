@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- 主页 -->
+    <color name="main_tab_back">#f1f1f1</color>
+    <color name="main_tab_title_unselect">#878787</color>
+    <color name="main_tab_title_select">#ffffff</color>
+    <color name="main_tab_line">#d2d5d7</color>
+    <color name="main_tab_select_back">#ff4040</color>
+    <color name="live_line_color">#e4e7e6</color>
+    <color name="gray_font">#b8b7bf</color>
+    <color name="personal_line_color">#e3e3e6</color>
+    <color name="dialog_bg_color">#cc000000</color>
+
+    <!-- 字体大小界面 -->
+    <color name="textsize_btn_color">#fc6d0d</color>
+    <color name="textsize_btn_color_bg">#e8e8e8</color>
+    <color name="segment_radio_group_white_item_bg">#ffffff</color>
+    <color name="segment_radio_group_grey_item_bg">#f7f7f7</color>
+    <color name="segment_radio_group_item_border_line">#cacdd1</color>
+
+    <!-- 下拉刷新颜色值 -->
+    <color name="pulltorefresh_text_color">#ff888888</color>
+
+    <!-- 加载结果界面 -->
+    <color name="load_result_text">#484848</color>
+
+    <!-- 加载进度颜色 -->
+    <color name="load_progress">#fc6d0d</color>
+    <color name="personal_playrecord_defaulttext_color">#929292</color>
+    <color name="news_detail_title_line_color">#d4d4d4</color>
+
+    <!-- 设置页面 -->
+    <color name="setting_sys_title">#ababab</color>
+    <color name="setting_item_title">#474747</color>
+    <color name="setting_btndown_bg_color">#229c9c9c</color>
+    <color name="setting_catch_size">#e2e3e7</color>
+
+    <!-- 版本更新 -->
+    <color name="version_up_back">#ffffff</color>
+    <color name="version_up_title">#474747</color>
+    <color name="version_up_content">#888888</color>
+    <!-- 通用顶部条 -->
+    <color name="comment_top_bar_title_color">#474747</color>
+    <color name="transparent_background">#50000000</color>
+
+</resources>

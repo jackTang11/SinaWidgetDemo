@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    tools:ignore="ContentDescription" >
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/version_upate_back"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <LinearLayout
+                android:id="@+id/tv_dialog_title_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_dialog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/version_update_title"
+                    android:textColor="@color/version_up_title"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/updatetip_new_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/version_new_back"
+                    android:gravity="center_vertical"
+                    android:textColor="#ff5454"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/dialog_border"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_dialog_title_layout"
+                android:background="#e5e5e5" />
+
+            <ScrollView
+                android:id="@+id/sl_dialog_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ll_dialog_btn_content"
+                android:layout_below="@+id/dialog_border"
+                android:layout_marginTop="18dp"
+                android:scrollbars="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_dialog_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5dp"
+                    android:textColor="@color/version_up_content"
+                    android:textSize="15sp" />
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/ll_dialog_btn_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn_dialog_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/version_upate_cancel"
+                    android:text="@string/version_update_cancel"
+                    android:textColor="#888888"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btn_dialog_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/version_upate_confirm"
+                    android:text="@string/version_update_confirm"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/ll_dialog_btn_content" />
+        </RelativeLayout>
+
+       <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/version_update_top_back"/> 
+        
+          <ImageView
+            android:id="@+id/tv_dialog_icon"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/version_up_icon" 
+            android:layout_marginTop="5dp"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

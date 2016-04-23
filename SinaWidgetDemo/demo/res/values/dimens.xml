@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 页面上标题栏左右点击按钮距离 -->
+    <dimen name="title_bar_side_range">5dp</dimen>
+    <dimen name="title_bar_otherside_range">15dp</dimen>
+    <dimen name="title_bar_top_range">5dp</dimen>
+    <dimen name="title_bar_bottom_range">5dp</dimen>
+
+    <!-- 字体设置 -->
+    <dimen name="segment_radio_group_item_radius">5dp</dimen>
+    <dimen name="segment_radio_group_item_border">1dp</dimen>
+    <dimen name="segment_radio_group_item_padding">10dp</dimen>
+    <!-- 顶部条 -->
+    <dimen name="commen_top_bar_padding">10dp</dimen>
+    <dimen name="commen_top_bar_title_size">20sp</dimen>
+    <dimen name="commen_top_bar_back_wh">22dp</dimen>
+
+    <!-- 通用正标题 -->
+    <dimen name="commen_title_size">16sp</dimen>
+    <dimen name="commen_sub_title_size">15sp</dimen>
+    <dimen name="commen_desc_size">13sp</dimen>
+
+    <!-- 通用分享按钮 -->
+    <dimen name="share_button_size">45dp</dimen>
+    <dimen name="share_button_padding_top">5dp</dimen>
+    <dimen name="share_button_padding_bottom">5dp</dimen>
+    <dimen name="share_button_padding_left">12dp</dimen>
+    <dimen name="share_button_padding_right">8dp</dimen>
+    <dimen name="divider_width">10dp</dimen>
+
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#4a79fb"
+    tools:ignore="ContentDescription" >
+   <LinearLayout android:orientation="vertical"
+        android:id="@+id/guide1_layout1"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
+	    <ImageView
+	            android:id="@+id/guide1_image_1"
+	            android:layout_width="300dp"
+	            android:layout_height="310dp"
+	            android:layout_marginLeft="20dp"
+	            android:src="@drawable/guide1_boy" />
+	    
+	    <ImageView
+	            android:id="@+id/guide1_image_2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/guide1_noeye" />
+	     <ImageView
+	            android:id="@+id/guide1_image_3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/guide1_lost" />
+	</LinearLayout>
+	
+    <ImageView
+	            android:id="@+id/guide1_image_4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@id/guide1_layout1"
+	            android:layout_alignTop="@id/guide1_layout1"
+	            android:layout_marginTop="35dp"
+	            android:layout_marginLeft="20dp"
+	            android:src="@drawable/guide1_jin" />
+    
+     <ImageView
+	            android:id="@+id/guide1_image_5"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignRight="@id/guide1_layout1"
+	            android:layout_alignTop="@id/guide1_layout1"
+	            android:layout_marginTop="60dp"
+	            android:layout_marginRight="10dp"
+	            android:src="@drawable/guide1_cpu" />
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="说明：\n下拉屏幕请求最新数据\n上拉屏幕请求更多数据"
+            android:textColor="#474747" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/round_image_list"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="#00000000"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"
+            android:persistentDrawingCache="animation"
+            android:scrollingCache="true"
+            ptr:ptrAnimationStyle="flip"
+            ptr:ptrDrawableEnd="@drawable/indicator_arrow"
+            ptr:ptrDrawableStart="@drawable/pull_to_refresh_animation"
+            ptr:ptrHeaderSubTextColor="@color/pulltorefresh_text_color"
+            ptr:ptrHeaderTextColor="@color/pulltorefresh_text_color"
+            ptr:ptrMode="both"
+            ptr:ptrScaleAnimationStyle="scale" />
+    </LinearLayout>
+
+</FrameLayout>

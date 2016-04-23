@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription"
+    android:background="#ffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    
+    <com.sina.sina973.custom.viewpagerindicator.IconPageIndicator
+			        android:id="@+id/guide_indicator"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:layout_centerHorizontal="true"
+			        android:layout_alignParentBottom="true"
+			        android:layout_marginBottom="60dp"
+			         />  
+    
+</RelativeLayout>

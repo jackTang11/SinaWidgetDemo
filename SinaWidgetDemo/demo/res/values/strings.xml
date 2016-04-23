@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WidgetDemo</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 退出程序 -->
+    <string name="setting_logout_comfirm">确定要退出帐户吗？</string>
+    <string name="tip_cancel">取消</string>
+    <string name="tip_comfirm">确定</string>
+    <string name="exit_app_twice">再按一次退出程序</string>
+
+    <!-- 主页面tab -->
+    <string name="main_tab_home">首页</string>
+    <string name="main_tab_gift">礼包</string>
+    <string name="main_tab_more">我的</string>
+
+    <!-- 加载界面 -->
+    <string name="custom_load_fail_txt">加载失败，点击刷新</string>
+    <string name="custom_load_sucess_txt">加载成功</string>
+    <string name="custom_load_reload_txt">点击重新加载</string>
+    <string name="person_text_playcord_dialog">暂无内容O(∩_∩)O~</string>
+    <string name="custom_load_loading_txt">客官稍等，马上就来</string>
+
+    <!-- 列表点击加载 -->
+    <string name="list_lood_food_loading">加载中</string>
+    <string name="list_nodata">没有更多数据了</string>
+
+    <!-- web页 -->
+    <string name="web_browser_exit">关闭</string>
+    <string name="web_browser_share_content">%1$s</string>
+    <string name="web_back">后退</string>
+    <string name="web_forword">前进</string>
+    <string name="web_refresh">刷新</string>
+    <string name="web_collect_success">已成功收藏该网页</string>
+    <string name="web_collect_do_fail">操作失败</string>
+    <!-- 联网状态 -->
+    <string name="device_network_wifi_available">已连接到Wifi</string>
+    <string name="device_network_mobile_available">已切换到2G/3G/4G网络</string>
+    <string name="device_network_unavailable">哎呦~您的网络有问题，\n请查看网络设置</string>
+    <!-- 设置页面 -->
+    <string name="setting_expires_comfirm">您绑定的账户即将过期！</string>
+    <string name="expires_comfirm_button">重新绑定</string>
+    <string name="expires_cancel_button">以后再说</string>
+    <!-- 字体大小窗口 -->
+    <string name="textsize_big">大号字体</string>
+    <string name="textsize_normal">普通字体</string>
+    <string name="textsize_small">小号字体</string>
+    <string name="textsize_conflrm">确&#160;定</string>
+    <string name="textsize_cancel">取&#160;消</string>
+    <!-- 版本更新窗口 -->
+    <string name="version_update_title">软件升级提醒</string>
+    <string name="version_update_confirm">现在升级</string>
+    <string name="version_update_cancel">取消 </string>
+    <string name="version_update_isnew">已是最新版本</string>
+    <string name="version_start_download">开始下载</string>
+    
+    <!-- 自动滑动的ViewPager -->
+	<string name="auto_scroll_viewpager_desc">说明：\n1、可以选择是否开启自动滑动效果\n2、可以设定自动滑动的时间\n3、可以选择滑动的方向（默认向右滑动）\n4、可以选择是否循环滑动</string>
+	
+</resources>

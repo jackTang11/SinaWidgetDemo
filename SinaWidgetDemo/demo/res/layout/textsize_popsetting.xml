@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#88000000" >
+
+    <LinearLayout
+        android:id="@+id/textsize_pop_an_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingTop="20dp" >
+
+        <com.sina.sina973.custom.view.SegmentedRadioGroup
+            android:id="@+id/segment_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dip"
+            android:checkedButton="@+id/button_font_low"
+            android:orientation="horizontal" >
+
+            <com.sina.sina973.custom.view.CenteredRadioImageButton
+                android:id="@+id/button_font_low"
+                android:button="@drawable/font_low"
+                android:minHeight="50dip"
+                android:minWidth="60dip" />
+
+            <com.sina.sina973.custom.view.CenteredRadioImageButton
+                android:id="@+id/button_font_medium"
+                android:button="@drawable/font_medium"
+                android:minHeight="50dip"
+                android:minWidth="60dip" />
+
+            <com.sina.sina973.custom.view.CenteredRadioImageButton
+                android:id="@+id/button_font_high"
+                android:button="@drawable/font_high"
+                android:minHeight="50dip"
+                android:minWidth="60dip" />
+
+            <com.sina.sina973.custom.view.CenteredRadioImageButton
+                android:id="@+id/button_font_exhigh"
+                android:button="@drawable/font_extra_high"
+                android:minHeight="50dip"
+                android:minWidth="60dip" />
+        </com.sina.sina973.custom.view.SegmentedRadioGroup>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/personal_line_color" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- <Button -->
+            <!-- android:id="@+id/btn_textsize_commit" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:layout_weight="1" -->
+            <!-- android:background="@drawable/textsize_textcolor_btn_select" -->
+            <!-- android:paddingBottom="10dp" -->
+            <!-- android:paddingTop="10dp" -->
+            <!-- android:text="@string/textsize_conflrm" -->
+            <!-- android:textSize="20dp" /> -->
+
+            <Button
+                android:id="@+id/btn_textsize_canncl"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/textsize_textcolor_btn_select"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/textsize_cancel"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

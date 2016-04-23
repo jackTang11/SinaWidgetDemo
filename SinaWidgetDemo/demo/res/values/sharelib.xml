@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="sharelib_platforms">
+        <item>@array/sina_weibo</item>
+        <!-- <item>@array/tencent_weibo</item> -->
+        <item>@array/tencent_wechat</item>
+        <item>@array/tencent_wechat_moment</item>
+    </integer-array>
+
+    <string-array name="sina_weibo">
+
+        <!-- Name -->
+        <item>SinaWeibo</item>
+        <!-- AppKey -->
+        <item>3349959294</item>
+        <!-- AppSecret -->
+        <item>5107c19410275434c27034f904f53d61</item>
+        <!-- RedirectUrl -->
+        <item>http://www.97973.com/</item>
+        <!-- Scope -->
+        <item>email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write</item>
+    </string-array>
+    <!-- <string-array name="tencent_weibo"> -->
+    <!-- Name -->
+    <!-- <item>TencentWeibo</item> -->
+    <!-- AppKey -->
+    <!-- <item>801553799</item> -->
+    <!-- AppSecret -->
+    <!-- <item>a92482458ba4d89f9c83194666705cfe</item> -->
+    <!-- RedirectUrl -->
+    <!-- <item>http://www.97973.com/</item> -->
+    <!-- Scope -->
+    <!-- <item></item> -->
+    <!-- </string-array> -->
+    <string-array name="tencent_wechat">
+
+        <!-- Name -->
+        <item>Wechat</item>
+        <!-- AppKey -->
+        <item>wx4e52b31c06d6c2ce</item>
+        <!-- AppSecret -->
+        <item></item>
+        <!-- RedirectUrl -->
+        <item></item>
+        <!-- Scope -->
+        <item></item>
+    </string-array>
+    <string-array name="tencent_wechat_moment">
+
+        <!-- Name -->
+        <item>WechatMoment</item>
+        <!-- AppKey -->
+        <item>wx4e52b31c06d6c2ce</item>
+        <!-- AppSecret -->
+        <item></item>
+        <!-- RedirectUrl -->
+        <item></item>
+        <!-- Scope -->
+        <item></item>
+    </string-array>
+</resources>

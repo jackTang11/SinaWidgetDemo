@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.sina.sinawidgetdemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff9977" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="用例1（封装好的HorizontalRecyclerview）"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/test1_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title1"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            >
+
+            <com.sina.sinawidgetdemo.custom.recyclerview.HorizontalRecyclerView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:padding="20dp"
+                android:id="@+id/hListView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/test1_layout"
+            android:padding="10dp"
+            android:text="用例2（未封装过的recyclerview）"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/test2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title2"
+            android:background="#ffffff"
+            android:orientation="vertical"
+             >
+
+            <android.support.v7.widget.RecyclerView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/hListView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:padding="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                
+                />
+        </LinearLayout>
+        
+        <Button 
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/update_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update long string!"/>
+        
+        <Button 
+            android:layout_above="@id/update_long"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/update_short"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update short string!"/>
+        
+        
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.sina.sinawidgetdemo.custom.view.pulltozoom.PullToZoomScrollViewEx
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        custom:zoomView="@layout/scrollzoomin_zoom_view"
+        custom:contentView="@layout/scrollzoomin_content_view"
+        custom:headerView="@layout/scrollzoomin_head_view" />
+    
+    
+</LinearLayout>
+ 

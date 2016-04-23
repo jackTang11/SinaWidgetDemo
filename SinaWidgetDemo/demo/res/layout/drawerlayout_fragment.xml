@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sina.sinawidgetdemo.custom.view.CustomDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/content_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0066ff" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/drawer_framelayout"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#45b97c" >
+    </FrameLayout>
+
+</com.sina.sinawidgetdemo.custom.view.CustomDrawerLayout>
