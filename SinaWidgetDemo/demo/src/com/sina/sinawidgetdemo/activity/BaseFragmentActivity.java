@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import com.android.overlay.OnConnectionChangedListener;
 import com.android.overlay.RunningEnvironment;
 import com.android.overlay.connection.ConnectionType;
-import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.usercredit.CheckStateButtonAgent;
 
 /**
@@ -44,7 +43,6 @@ public class BaseFragmentActivity extends FragmentActivity implements OnConnecti
 		RunningEnvironment.getInstance().removeUIListener(
 				OnConnectionChangedListener.class, this);
 		super.onPause();
-	    StatisticsManager.onPause(this);
 	}
 
 	@Override
@@ -58,7 +56,6 @@ public class BaseFragmentActivity extends FragmentActivity implements OnConnecti
 		super.onResume();
 		RunningEnvironment.getInstance().addUIListener(
 				OnConnectionChangedListener.class, this);
-		  StatisticsManager.onResume(this);
 	}
 
 	@Override

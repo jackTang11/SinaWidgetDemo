@@ -9,7 +9,6 @@ import android.view.KeyEvent;
 
 import com.android.overlay.connection.ConnectionType;
 import com.sina.sinawidgetdemo.fragment.MainFragment;
-import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.R;
 
 /**
@@ -23,7 +22,6 @@ public class MainActivity extends BaseFragmentActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		StatisticsManager.init(getApplicationContext());
 		setContentView(R.layout.main_activity);
 		initFragment();
 	}

@@ -12,17 +12,11 @@
     <string name="default_sound">com.android.overlay.DEFAULT_SOUND</string>
 
     <string-array name="managers">
-        <item>com.sina.sinawidgetdemo.sharesdk.Sina973AccountManager</item>
         <item>com.android.overlay.manager.LogManager</item>
         <item>com.android.overlay.manager.NetworkManager</item>
         <item>com.android.overlay.manager.ScreenManager</item>
         <item>com.android.overlay.manager.ConnectionManager</item>
         <item>com.android.overlay.manager.SettingsManager</item>
-        <item>com.sina.sinawidgetdemo.sharesdk.Sina973AuthorizeManager</item>
-        <item>com.sina.sinawidgetdemo.sharesdk.AccountInfoManager</item>
-        <item>com.sina.sinawidgetdemo.usercredit.ConfigurationManager</item>
-        <item>com.sina.sinawidgetdemo.sharesdk.Sina973ShareManager</item>
-        <item>com.sina.sinawidgetdemo.sharesdk.Sina973PlatformManager</item>
     </string-array>
     <string-array name="tables"></string-array>
 

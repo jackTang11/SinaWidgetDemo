@@ -1,8 +1,10 @@
 package com.sina.sinawidgetdemo.applcation;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
+import android.support.multidex.MultiDex;
 
 import com.android.overlay.KeepAliveService;
 import com.android.overlay.RunningEnvironment;
@@ -26,7 +28,10 @@ public class MyApplication extends Application {
 
 	@Override
 	public void onCreate() {
+		MultiDex.install(this);
+
 		super.onCreate();
+
 		EngineManager.init(this);
 		EngineManager.getInstance().initConfig(new EngineConfig().setIsEncrypt(false)
 				.setSignKey(RequestConstant.SIGN_KEY_VALUE)
@@ -69,5 +74,11 @@ public class MyApplication extends Application {
 			unregisterReceiver(netChangeReceiver);
 			netChangeReceiver = null;
 		}
+	}
+
+	@Override
+	protected void attachBaseContext(Context base) {
+		super.attachBaseContext(base);
+		MultiDex.install(this);
 	}
 }

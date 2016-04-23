@@ -27,10 +27,8 @@ import com.sina.sinawidgetdemo.constant.StatisticsConstant;
 import com.sina.sinawidgetdemo.fragment.GuideFragment.GuideOnClickListener;
 import com.sina.sinawidgetdemo.request.process.RequestConfigProcess;
 import com.sina.sinawidgetdemo.returnmodel.SwitchConfigModel;
-import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.switchconfig.SwitchConfigManager;
 import com.sina.sinawidgetdemo.usercredit.CheckStateButtonAgent;
-import com.sina.sinawidgetdemo.usercredit.ConfigurationManager;
 import com.sina.sinawidgetdemo.utils.CommonUtils;
 import com.sina.sinawidgetdemo.utils.PreferencesUtils;
 import com.sina.sinawidgetdemo.versionupdate.VersionUpdateManager;
@@ -433,10 +431,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 	 */
 	private void startAppLogic() {
 		SwitchConfigManager.requestSwitchConfig(myActivity);
-		StatisticsManager.sendEvent(myActivity.getApplicationContext(),
-				StatisticsConstant.STARTAPP, "", null);
 		LogUtils.d("ENV", "startAppLogic()");
-		ConfigurationManager.getInstance().requestConfigurations();
 		requestVersionUpdate();
 		new CheckStateButtonAgent(getActivity()).checkNetworkStatus();
 		initAdSDK();

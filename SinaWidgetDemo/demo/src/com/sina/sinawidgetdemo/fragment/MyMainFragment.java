@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.sina.sinawidgetdemo.constant.StatisticsConstant;
 import com.sina.sinawidgetdemo.returnmodel.SwitchConfigModel;
-import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.switchconfig.SwitchConfigManager;
 import com.sina.sinawidgetdemo.R;
 
@@ -27,7 +26,7 @@ import com.sina.sinawidgetdemo.R;
 public class MyMainFragment extends BaseFragment implements OnClickListener{
 
 	 private HomeFragment homeFragment;
-	 private AdvanceWListFragment giftFragment;
+	 private GiftFragment giftFragment;
 	 private MoreFragment moreFragment;
 	 private TextView homeTagView,giftTagView,moreTagView;
 	 public int clickId;
@@ -155,7 +154,7 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 		FragmentManager fm = getChildFragmentManager();
 		FragmentTransaction fragTransaction = fm.beginTransaction();
 		homeFragment = new HomeFragment();
-		giftFragment = new AdvanceWListFragment();
+		giftFragment = new GiftFragment();
 		moreFragment = new MoreFragment();
 		fragTransaction.add(R.id.my_main_fragment_content, homeFragment);
 	    fragTransaction.commitAllowingStateLoss();
@@ -180,24 +179,18 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 				   homeFragment = new HomeFragment();
 			   }
 			   fragTransaction.replace(R.id.my_main_fragment_content, homeFragment);
-			   StatisticsManager.sendEvent(myActivity.getApplicationContext(),
-						StatisticsConstant.HOME_TAB, "", null);
 		   break;
 		   case R.id.main_fragment_title_gift:
 			   if (giftFragment == null) {
-				   giftFragment = new AdvanceWListFragment();
+				   giftFragment = new GiftFragment();
 			   }
 			   fragTransaction.replace(R.id.my_main_fragment_content, giftFragment);
-			   StatisticsManager.sendEvent(myActivity.getApplicationContext(),
-						StatisticsConstant.GIFT_TAB, "", null);
 		   break;
 		   case R.id.main_fragment_title_more:
 			if (moreFragment == null) {
 				moreFragment = new MoreFragment();
 			}
 			fragTransaction.replace(R.id.my_main_fragment_content, moreFragment);
-			StatisticsManager.sendEvent(myActivity.getApplicationContext(),
-						StatisticsConstant.MORE_TAB, "", null);
 		   break;
 		  	   
 		   
