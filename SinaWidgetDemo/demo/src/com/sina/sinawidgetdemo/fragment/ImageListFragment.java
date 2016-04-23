@@ -54,7 +54,6 @@ public class ImageListFragment extends BaseFragment implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		Fresco.initialize(getActivity());
 		super.onCreate(savedInstanceState);
-		myActivity = (BaseFragmentActivity) getActivity();
 		initImageLoader();
 		initData();
 		initRequestData();
@@ -161,7 +160,7 @@ public class ImageListFragment extends BaseFragment implements OnClickListener {
 		listView.setAdapter(listAdapter);
 
 		mainLayout = (FrameLayout) view.findViewById(R.id.main_layout);
-		loadLayout = new CustomLoadView(myActivity);
+		loadLayout = new CustomLoadView(getActivity());
 		loadLayout.creatView(mainLayout, this);
 		if (imageList.size() <= 0) {
 			loadLayout.flushLoadView(CustomLoadView.LOAD_ING);
@@ -278,7 +277,7 @@ public class ImageListFragment extends BaseFragment implements OnClickListener {
 	}
 
 	public void resultCallBack() {
-		if (isDetached() || myActivity == null || myActivity.isFinishing()) {
+		if (isDetached() || getActivity() == null || getActivity().isFinishing()) {
 			return;
 		}
 		if (mPage == 1) {

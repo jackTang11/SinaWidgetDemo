@@ -140,7 +140,7 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 		giftLayout = view.findViewById(R.id.main_fragment_title_gift_layout);
 		clickChangeColor();
 		
-		SwitchConfigModel model = SwitchConfigManager.getSwitchConfigModel(myActivity);
+		SwitchConfigModel model = SwitchConfigManager.getSwitchConfigModel(getActivity());
 		if(model.getGift_show_tag()==SwitchConfigManager.SWITCH_CLOSE){
 			giftLayout.setVisibility(View.GONE);
 		}
@@ -202,12 +202,12 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 	}
 	
 	private void clickChangeColor(){
-		homeTagView.setTextColor(myActivity.getResources().getColor(R.color.main_tab_title_unselect));
-		giftTagView.setTextColor(myActivity.getResources().getColor(R.color.main_tab_title_unselect));
-		moreTagView.setTextColor(myActivity.getResources().getColor(R.color.main_tab_title_unselect));
-		homeTagView.setBackgroundColor(myActivity.getResources().getColor(R.color.transparent));
-		giftTagView.setBackgroundColor(myActivity.getResources().getColor(R.color.transparent));
-		moreTagView.setBackgroundColor(myActivity.getResources().getColor(R.color.transparent));
+		homeTagView.setTextColor(getActivity().getResources().getColor(R.color.main_tab_title_unselect));
+		giftTagView.setTextColor(getActivity().getResources().getColor(R.color.main_tab_title_unselect));
+		moreTagView.setTextColor(getActivity().getResources().getColor(R.color.main_tab_title_unselect));
+		homeTagView.setBackgroundColor(getActivity().getResources().getColor(R.color.transparent));
+		giftTagView.setBackgroundColor(getActivity().getResources().getColor(R.color.transparent));
+		moreTagView.setBackgroundColor(getActivity().getResources().getColor(R.color.transparent));
 		
 		Drawable homeDrawable= getTextDrawable(R.drawable.tab_home);    
 		homeTagView.setCompoundDrawables(null,homeDrawable,null,null);  
@@ -221,20 +221,20 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 		
 		switch(clickId){
 		   case R.id.main_fragment_title_home:
-			   homeTagView.setTextColor(myActivity.getResources().getColor(R.color.main_tab_title_select));
-			   homeTagView.setBackgroundColor(myActivity.getResources().getColor(R.color.main_tab_select_back));
+			   homeTagView.setTextColor(getActivity().getResources().getColor(R.color.main_tab_title_select));
+			   homeTagView.setBackgroundColor(getActivity().getResources().getColor(R.color.main_tab_select_back));
 			   Drawable homeDrawable_down= getTextDrawable(R.drawable.tab_home_down);    
 			   homeTagView.setCompoundDrawables(null,homeDrawable_down,null,null); 
 		   break;
 		   case R.id.main_fragment_title_gift:
-			   giftTagView.setTextColor(myActivity.getResources().getColor(R.color.main_tab_title_select));
-			   giftTagView.setBackgroundColor(myActivity.getResources().getColor(R.color.main_tab_select_back));
+			   giftTagView.setTextColor(getActivity().getResources().getColor(R.color.main_tab_title_select));
+			   giftTagView.setBackgroundColor(getActivity().getResources().getColor(R.color.main_tab_select_back));
 			   Drawable giftDrawable_down= getTextDrawable(R.drawable.tab_gift_down_m);    
 			   giftTagView.setCompoundDrawables(null,giftDrawable_down,null,null);
 		   break;
 		   case R.id.main_fragment_title_more:
-			   moreTagView.setTextColor(myActivity.getResources().getColor(R.color.main_tab_title_select));
-			   moreTagView.setBackgroundColor(myActivity.getResources().getColor(R.color.main_tab_select_back));
+			   moreTagView.setTextColor(getActivity().getResources().getColor(R.color.main_tab_title_select));
+			   moreTagView.setBackgroundColor(getActivity().getResources().getColor(R.color.main_tab_select_back));
 			   Drawable moreDrawable_down= getTextDrawable(R.drawable.tab_more_down);    
 			   moreTagView.setCompoundDrawables(null,moreDrawable_down,null,null);
 		   break;

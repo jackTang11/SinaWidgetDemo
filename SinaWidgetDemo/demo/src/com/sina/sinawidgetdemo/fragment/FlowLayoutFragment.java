@@ -81,7 +81,7 @@ public class FlowLayoutFragment extends BaseFragment {
 				
 				@Override
 				public void onClick(View v) {
-					Toast.makeText(myActivity, value, Toast.LENGTH_SHORT).show();
+					Toast.makeText(getActivity(), value, Toast.LENGTH_SHORT).show();
 				}
 			});
 			labelLayout.addView(textView);

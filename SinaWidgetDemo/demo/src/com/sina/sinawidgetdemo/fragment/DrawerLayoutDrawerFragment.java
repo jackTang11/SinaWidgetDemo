@@ -43,7 +43,7 @@ public class DrawerLayoutDrawerFragment extends BaseFragment {
 		mArrayList.add("item1");
 		mArrayList.add("item2");
 		mArrayList.add("item3");
-		mAdapter = new ArrayAdapter<String>(myActivity,
+		mAdapter = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_1, mArrayList);
 		mDrawerListView.setAdapter(mAdapter);
 		mDrawerListView.setOnItemClickListener(new OnItemClickListener() {

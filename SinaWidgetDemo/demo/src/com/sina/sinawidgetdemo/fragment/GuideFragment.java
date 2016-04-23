@@ -177,7 +177,7 @@ public class GuideFragment extends BaseFragment implements OnClickListener{
 				.findViewById(R.id.guide_indicator);
 		int screen_w = 0;
 		try{
-		  screen_w = DeviceUtils.getScreenWH(myActivity)[0];
+		  screen_w = DeviceUtils.getScreenWH(getActivity())[0];
 		}
 		catch(Exception e){
 			
@@ -185,7 +185,7 @@ public class GuideFragment extends BaseFragment implements OnClickListener{
 		
 		if(screen_w < 700){
 			RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) guideIndicator.getLayoutParams();
-			lp.bottomMargin=ViewUtils.dp2px(myActivity, 30);
+			lp.bottomMargin=ViewUtils.dp2px(getActivity(), 30);
 			guideIndicator.setLayoutParams(lp);
 		}
 			
@@ -314,7 +314,7 @@ public class GuideFragment extends BaseFragment implements OnClickListener{
 		focusad_icon_ids.clear();
 		views.clear();
 		for(int i=0;i<viewResouseId.length;i++){
-			View itemView =  myActivity.inflater.inflate(
+			View itemView =  LayoutInflater.from(getActivity()).inflate(
 					viewResouseId[i], null, false);
 			views.add(itemView);
 			focusad_icon_ids.add(R.drawable.focus_guide_icon);
@@ -323,7 +323,7 @@ public class GuideFragment extends BaseFragment implements OnClickListener{
 				exitButton = (TextView)itemView.findViewById(R.id.guide3_exit_button);
 				int screen_w = 0;
 				try{
-				  screen_w = DeviceUtils.getScreenWH(myActivity)[0];
+				  screen_w = DeviceUtils.getScreenWH(getActivity())[0];
 				}
 				catch(Exception e){
 					

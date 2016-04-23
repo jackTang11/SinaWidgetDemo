@@ -83,13 +83,13 @@ public class AutoScrollViewPagerFragment extends BaseFragment {
 							.getLayoutParams();
 					params.setMargins(8, 0, 8, 0);
 					if (i == arg0 % dotList.size()) {
-						params.width = ViewUtils.dp2px(myActivity, 5);
-						params.height = ViewUtils.dp2px(myActivity, 5);
+						params.width = ViewUtils.dp2px(getActivity(), 5);
+						params.height = ViewUtils.dp2px(getActivity(), 5);
 						dotList.get(i).setBackgroundResource(
 								R.drawable.focus_dot_select);
 					} else {
-						params.width = ViewUtils.dp2px(myActivity, 4);
-						params.height = ViewUtils.dp2px(myActivity, 4);
+						params.width = ViewUtils.dp2px(getActivity(), 4);
+						params.height = ViewUtils.dp2px(getActivity(), 4);
 						dotList.get(i).setBackgroundResource(
 								R.drawable.focus_dot_unselect);
 					}
@@ -123,18 +123,18 @@ public class AutoScrollViewPagerFragment extends BaseFragment {
 					ViewGroup.LayoutParams.WRAP_CONTENT);
 			params.setMargins(8, 0, 8, 0);
 
-			ImageView m = new ImageView(myActivity);
+			ImageView m = new ImageView(getActivity());
 			// if (i == 0) {
 			// m.setVisibility(View.GONE);
 			if (i == 0) {
 				 m.setVisibility(View.VISIBLE);
-				 params.width = ViewUtils.dp2px(myActivity, 5);
-				 params.height = ViewUtils.dp2px(myActivity, 5);
+				 params.width = ViewUtils.dp2px(getActivity(), 5);
+				 params.height = ViewUtils.dp2px(getActivity(), 5);
 				 m.setBackgroundResource(R.drawable.focus_dot_select);
 			} else if (i > 1 && i < resArray.size() - 1) {
 				m.setVisibility(View.VISIBLE);
-				params.width = ViewUtils.dp2px(myActivity, 4);
-				params.height = ViewUtils.dp2px(myActivity, 4);
+				params.width = ViewUtils.dp2px(getActivity(), 4);
+				params.height = ViewUtils.dp2px(getActivity(), 4);
 				m.setBackgroundResource(R.drawable.focus_dot_unselect);
 			}
 			// } else {

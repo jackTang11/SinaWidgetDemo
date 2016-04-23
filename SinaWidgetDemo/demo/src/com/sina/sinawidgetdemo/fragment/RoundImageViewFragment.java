@@ -57,7 +57,6 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		myActivity = (BaseFragmentActivity) getActivity();
 		initImageLoader();
 		initData();
 		initRequestData();
@@ -144,7 +143,7 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 		listView.setAdapter(listAdapter);
 		
 		mainLayout = (FrameLayout) view.findViewById(R.id.main_layout);
-		loadLayout = new CustomLoadView(myActivity);
+		loadLayout = new CustomLoadView(getActivity());
 		loadLayout.creatView(mainLayout, this);
 		if (imageList.size()<=0) {
 			loadLayout.flushLoadView(CustomLoadView.LOAD_ING);
@@ -192,7 +191,7 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 			String imgurl = (String) getItem(position);
 			ViewHolder holder = null;
 			if (convertView == null) {
-				convertView = LayoutInflater.from(myActivity).inflate(
+				convertView = LayoutInflater.from(getActivity()).inflate(
 						R.layout.round_imageview_list_item, null, false);
 				holder = new ViewHolder();
 				holder.roundImagview = (ImageView) convertView
@@ -252,7 +251,7 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 		}
 	}
 	public void resultCallBack() {
-		if(isDetached() || myActivity == null || myActivity.isFinishing()){
+		if(isDetached() || getActivity() == null || getActivity().isFinishing()){
 			return;
 		}
 		if (mPage == 1) {

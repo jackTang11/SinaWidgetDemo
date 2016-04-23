@@ -21,7 +21,6 @@ import com.sina.sinawidgetdemo.activity.BaseFragmentActivity;
  *
  */
 public class BaseFragment extends Fragment{
-	protected BaseFragmentActivity myActivity;
 	protected View mView;
 	protected Handler handler = new Handler();
 //	protected VersionUpdateManager updateDialog;
@@ -40,7 +39,6 @@ public class BaseFragment extends Fragment{
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		myActivity = (BaseFragmentActivity) getActivity();
 		Thread.setDefaultUncaughtExceptionHandler(new ApplicationUncaughtHandler(
 				getActivity()));
 //		updateDialog = VersionUpdateManager.getInstance(myActivity);

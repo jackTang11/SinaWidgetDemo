@@ -66,7 +66,6 @@ public class AdvanceWListFragment extends BaseFragment implements OnClickListene
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		myActivity = (BaseFragmentActivity) getActivity();
 		initImageLoader();
 		initData();
 		initRequestData();
@@ -581,7 +580,7 @@ public class AdvanceWListFragment extends BaseFragment implements OnClickListene
 	}
 
 	public void resultCallBack() {
-		if (isDetached() || myActivity == null || myActivity.isFinishing()) {
+		if (isDetached() || getActivity() == null || getActivity().isFinishing()) {
 			return;
 		}
 		if (mPage == 1) {

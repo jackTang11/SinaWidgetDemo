@@ -70,7 +70,6 @@ public class WListFragment extends BaseFragment implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		Fresco.initialize(getActivity());
 		super.onCreate(savedInstanceState);
-		myActivity = (BaseFragmentActivity) getActivity();
 		initImageLoader();
 		initData();
 		initRequestData();
@@ -483,7 +482,7 @@ public class WListFragment extends BaseFragment implements OnClickListener {
 	}
 
 	public void resultCallBack() {
-		if (isDetached() || myActivity == null || myActivity.isFinishing()) {
+		if (isDetached() || getActivity() == null || getActivity().isFinishing()) {
 			return;
 		}
 		if (mPage == 1) {

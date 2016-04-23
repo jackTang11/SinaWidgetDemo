@@ -62,12 +62,12 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 		@Override
 		public void dispatchMessage(Message msg) {
 			if (msg.what == REMOVE_START_FRAGMENT) {
-				if (myActivity != null && !myActivity.isFinishing()) {
+				if (getActivity() != null && !getActivity().isFinishing()) {
 					removeStartFragment();
 					turnGuideFragmentLogic();
 				}
 			} else if (msg.what == REMOVE_AD_FRAGMENT) {
-				if (myActivity != null && !myActivity.isFinishing()) {
+				if (getActivity() != null && !getActivity().isFinishing()) {
 					long totalTime = AdFragment.DEFAULT_SHOWTIME_DURATION;
 					if (adFragment != null)
 						totalTime = adFragment.getShowTime();
@@ -83,7 +83,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 			}
 			// else if (msg.what == CHANGE_NUMBER_ANIMATION) {
 			// int number = msg.arg1;
-			// if (myActivity != null && !myActivity.isFinishing()) {
+			// if (getActivity() != null && !getActivity().isFinishing()) {
 			// if (startFragment != null && startFragment.isAdded()) {
 			// startFragment.setNumber(number);
 			// }
@@ -196,7 +196,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 
 			@Override
 			public void onShowTimeOver() {
-				// myActivity.finish();
+				// getActivity().finish();
 			}
 
 			@Override
@@ -207,7 +207,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 				if (model.getType() == RequestConstant.WEB_CLICK_ACTION) {
 					// Uri uri = Uri.parse(model.getParam());
 					// Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-					// myActivity.startActivity(intent);
+					// getActivity().startActivity(intent);
 					Intent intent = new Intent(getActivity(),
 							WebBrowserActivity.class);
 					intent.putExtra("url", model.getParam());
@@ -244,10 +244,10 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 			return;
 		}
 		if (isSave)
-			PreferencesUtils.writeInt(myActivity,
+			PreferencesUtils.writeInt(getActivity(),
 					PreferencesConstant.GUIDE_VERSION_FILE,
 					PreferencesConstant.GUIDE_VERSION_KEY,
-					CommonUtils.getVersionCode(myActivity));
+					CommonUtils.getVersionCode(getActivity()));
 		FragmentManager fm = getChildFragmentManager();
 		FragmentTransaction fragTransaction = fm.beginTransaction();
 		fragTransaction.replace(R.id.main_fragment_content, myMainFragment);
@@ -356,12 +356,12 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 			return;
 		}
 		SwitchConfigModel model = SwitchConfigManager
-				.getSwitchConfigModel(myActivity);
+				.getSwitchConfigModel(getActivity());
 		if (model.getGift_show_tag() == SwitchConfigManager.SWITCH_CLOSE) {
 			passGuideFragment(false);
 			return;
 		}
-		guide_version = PreferencesUtils.getInt(myActivity,
+		guide_version = PreferencesUtils.getInt(getActivity(),
 				PreferencesConstant.GUIDE_VERSION_FILE,
 				PreferencesConstant.GUIDE_VERSION_KEY, 0);
 		// 屏蔽跳过引导页
@@ -386,7 +386,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 			// if(version > 0){
 			// return true;
 			// }
-			if (guide_version == CommonUtils.getVersionCode(myActivity)) {
+			if (guide_version == CommonUtils.getVersionCode(getActivity())) {
 
 				return true;
 			}
@@ -430,7 +430,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 	 * 启动程序逻辑
 	 */
 	private void startAppLogic() {
-		SwitchConfigManager.requestSwitchConfig(myActivity);
+		SwitchConfigManager.requestSwitchConfig(getActivity());
 		LogUtils.d("ENV", "startAppLogic()");
 		requestVersionUpdate();
 		new CheckStateButtonAgent(getActivity()).checkNetworkStatus();
@@ -455,7 +455,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 	 */
 	private void requestVersionUpdate() {
 		VersionUpdateManager updateDialog = VersionUpdateManager
-				.getInstance(myActivity);
+				.getInstance(getActivity());
 		updateDialog.request();
 	}
 
@@ -495,9 +495,9 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 			if (isExit()) {
 				// 推出并释放
 				exitLogic();
-				myActivity.finish();
+				getActivity().finish();
 			} else {
-				Toast.makeText(myActivity, R.string.exit_app_twice,
+				Toast.makeText(getActivity(), R.string.exit_app_twice,
 						Toast.LENGTH_SHORT).show();
 			}
 			return true;

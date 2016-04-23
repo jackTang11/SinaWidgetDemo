@@ -182,7 +182,7 @@ public class WebBrowserFragment extends WebDetailFragment {
 		String sAgeFormat1 = getResources().getString(
 				R.string.web_browser_share_content);
 		String content = String.format(sAgeFormat1, titleStr);
-		Bitmap img = ViewUtils.getScreenShot(myActivity);
+		Bitmap img = ViewUtils.getScreenShot(getActivity());
 		// if(img!=null)
 		// img = ViewUtils.scaleBitmapImg(img, 300, 300);
 

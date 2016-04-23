@@ -37,13 +37,13 @@ public class DrawerLayoutContentFragment extends BaseFragment {
 
 	private void initView() {
 		mContentListView = (ListView) mView.findViewById(R.id.content_listview);
-		mHeaderView = new TextView(myActivity);
+		mHeaderView = new TextView(getActivity());
 		mHeaderView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		mHeaderView.setText("这是一个关于抽屉的demo");
 		mHeaderView.setTextSize(20);
 		mContentListView.addHeaderView(mHeaderView);
 		String str[] = new String[] { "item1", "item2", "item3"};
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(myActivity,
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_1, str);
 		mContentListView.setAdapter(adapter);
 		mContentListView.setOnItemClickListener(new OnItemClickListener() {
