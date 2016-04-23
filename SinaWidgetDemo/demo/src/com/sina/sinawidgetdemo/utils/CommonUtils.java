@@ -292,18 +292,6 @@ public class CommonUtils {
 		return baseUrl;
 	}
 
-	public static Properties getConfigProperties(Context con) {
-		Properties properties = new Properties();
-		try {
-			InputStream is = con.getAssets().open("config.properties");
-			properties.load(is);
-			return properties;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
 	/**
 	 * webview执行js方法
 	 * 

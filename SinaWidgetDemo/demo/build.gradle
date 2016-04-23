@@ -9,6 +9,7 @@ dependencies {
     compile "tools.android:Overlay:${OVERLAY_VERSION}"
     compile "com.facebook.fresco:fresco:${FRESCO_VERSION}"
     compile project(':Pulltorefresh')
+    compile files('libs/android-support-v7-recyclerview.jar')
 }
 
 android {
@@ -65,7 +66,6 @@ android {
             exclude 'lib/arm64-v8a/libmemchunk.so'
             exclude 'lib/arm64-v8a/libwebp.so'
             exclude 'lib/arm64-v8a/libwebpimage.so'
-            exclude 'lib/mips/libweibosdkcore.so'
             exclude 'lib/x86_64/libbitmaps.so'
             exclude 'lib/x86_64/libgifimage.so'
             exclude 'lib/x86_64/libimagepipeline.so'

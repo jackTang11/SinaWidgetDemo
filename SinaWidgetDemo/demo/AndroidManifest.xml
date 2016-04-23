@@ -76,64 +76,6 @@
             </intent-filter>
         </activity>
 
-        <!-- 友盟意见反馈添加 -->
-        <activity
-            android:name="com.umeng.fb.ConversationActivity"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name="com.umeng.fb.ContactActivity"
-            android:theme="@android:style/Theme.NoTitleBar" />
-
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="5489770bfd98c5496900080b" >
-        </meta-data>
-
-        <!-- 必须注册在微博授权，分享微博时候用到 -->
-        <activity
-            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
-            android:configChanges="keyboardHidden|orientation"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" >
-        </activity>
-        <activity
-            android:name="com.tencent.weibo.sdk.android.component.Authorize"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!-- 微信分享需添加 -->
-        <activity
-            android:name="com.sina.sinawidgetdemo.wxapi.WXEntryActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <receiver android:name="com.sina.sinawidgetdemo.receiver.NetChangeReceiver" >
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
-        <!-- qq分享需添加 -->
-        <activity android:name="com.tencent.connect.avatar.ImageActivity" />
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.tencent.tauth.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <!-- Your AppId         <data android:scheme="tencent1103461598" /> -->
-            </intent-filter>
-        </activity>
-
         <service android:name="com.android.overlay.KeepAliveService" />
 
         <activity
