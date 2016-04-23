@@ -12,9 +12,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.sina.sinawidgetdemo.constant.StatisticsConstant;
-import com.sina.sinawidgetdemo.returnmodel.SwitchConfigModel;
-import com.sina.sinawidgetdemo.switchconfig.SwitchConfigManager;
 import com.sina.sinawidgetdemo.R;
 
 /**
@@ -140,10 +137,6 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 		giftLayout = view.findViewById(R.id.main_fragment_title_gift_layout);
 		clickChangeColor();
 		
-		SwitchConfigModel model = SwitchConfigManager.getSwitchConfigModel(getActivity());
-		if(model.getGift_show_tag()==SwitchConfigManager.SWITCH_CLOSE){
-			giftLayout.setVisibility(View.GONE);
-		}
 	}
 
 	/**

@@ -3,6 +3,7 @@ package com.sina.sinawidgetdemo.fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Handler.Callback;
+import android.os.Looper;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,7 +89,7 @@ public class ProgressBarFragment extends BaseFragment {
 		}
 		
 	}
-	Handler mHandler = new Handler(){
+	Handler mHandler = new Handler(Looper.getMainLooper()){
 
 		@Override
 		public void handleMessage(Message msg) {

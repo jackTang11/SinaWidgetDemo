@@ -3,6 +3,7 @@ package com.sina.sinawidgetdemo.custom.view;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,7 @@ public class CustomLoadView {
     private static final int HANDLER_LOAD_LOADING = 123457;
     private static final int HANDLER_LOAD_NODATA = 123458;
     private static final int HANDLER_LOAD_KONG  = 123459;
-    private Handler handler = new Handler() {
+    private Handler handler = new Handler(Looper.getMainLooper()) {
 		@Override
 		public void handleMessage(Message msg) {
 			switch(msg.what){

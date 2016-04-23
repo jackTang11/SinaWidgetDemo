@@ -454,7 +454,7 @@ public class AdvanceWListFragment extends BaseFragment implements OnClickListene
 		if (isForceRefresh) {
 			mPage = 1;
 		}
-		new Handler().postDelayed(new Runnable() {
+		new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
 
 			@Override
 			public void run() {

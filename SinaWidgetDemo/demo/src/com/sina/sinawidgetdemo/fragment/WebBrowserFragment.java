@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -43,7 +44,7 @@ public class WebBrowserFragment extends WebDetailFragment {
 	private static final int REFRESH_TOOLS = 100100;
 	private View mTitleView;
 	private boolean isCollected;
-	private Handler mHandler = new Handler() {
+	private Handler mHandler = new Handler(Looper.getMainLooper()) {
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
@@ -299,7 +300,7 @@ public class WebBrowserFragment extends WebDetailFragment {
 
 				@Override
 				public void onAnimationEnd(Animation animation) {
-					new Handler().post(new Runnable() {
+					new Handler(Looper.getMainLooper()).post(new Runnable() {
 						@Override
 						public void run() {
 							if (popupWindow_textsize != null

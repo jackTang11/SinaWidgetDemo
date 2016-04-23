@@ -57,8 +57,6 @@ public class HomeFragment extends BaseFragment {
 	private void initData() {
 		mTitleList.add("自动滑动ViewPager");
 		mFragmentList.add(new AutoScrollViewPagerFragment());
-		mTitleList.add("横向滑动");
-		mFragmentList.add(new HorizontalScrollFragment());// 横向滑动
 		mTitleList.add("横向滑动新");
 		mFragmentList.add(new HorizontalScrollFragmentByRecyclerView());// 横向滑动
 		mTitleList.add("下拉放大回弹ScrollView");

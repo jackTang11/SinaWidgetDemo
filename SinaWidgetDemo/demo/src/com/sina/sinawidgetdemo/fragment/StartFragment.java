@@ -8,7 +8,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import com.sina.sinawidgetdemo.R;
-import com.sina.sinaadsdk.sdk.AdSDK;
 
 /**
  * 启动页

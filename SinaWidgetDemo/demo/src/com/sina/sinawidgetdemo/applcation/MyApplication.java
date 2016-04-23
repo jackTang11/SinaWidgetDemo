@@ -2,17 +2,11 @@ package com.sina.sinawidgetdemo.applcation;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.support.multidex.MultiDex;
 
 import com.android.overlay.KeepAliveService;
 import com.android.overlay.RunningEnvironment;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.sina.engine.base.config.EngineConfig;
-import com.sina.engine.base.manager.EngineManager;
-import com.sina.sinawidgetdemo.constant.RequestConstant;
-import com.sina.sinawidgetdemo.receiver.NetChangeReceiver;
 
 /**
  * application类
@@ -29,11 +23,6 @@ public class MyApplication extends Application {
 
 		super.onCreate();
 
-		EngineManager.init(this);
-		EngineManager.getInstance().initConfig(new EngineConfig().setIsEncrypt(false)
-				.setSignKey(RequestConstant.SIGN_KEY_VALUE)
-				.setPartner_id(RequestConstant.PARTNER_ID_VALUE));
-
 		if (subSystem == null) {
 			subSystem = new RunningEnvironment("R.array.managers",
 					"R.array.tables");
@@ -42,26 +31,10 @@ public class MyApplication extends Application {
 		}
 		subSystem.onCreate(this);
 
-		registerNetChangeReceiver();
 		Fresco.initialize(this);
 		startService(KeepAliveService.createIntent(this));
 	}
 
-	private NetChangeReceiver netChangeReceiver;
-
-	public void registerNetChangeReceiver(){
-		netChangeReceiver = new NetChangeReceiver();
-		IntentFilter mFilter = new IntentFilter();
-        mFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(netChangeReceiver, mFilter);
-	}
-	
-	public void unRegisterNetChangeReceiver(){
-		if(netChangeReceiver != null){
-			unregisterReceiver(netChangeReceiver);
-			netChangeReceiver = null;
-		}
-	}
 
 	@Override
 	protected void attachBaseContext(Context base) {

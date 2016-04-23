@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -145,8 +146,8 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 		if(isForceRefresh){
 			mPage=1;
 		}
-		new Handler().postDelayed(new Runnable() {
-			
+		new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
 			@Override
 			public void run() {
 				resultCallBack();

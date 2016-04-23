@@ -22,11 +22,7 @@ import com.sina.sinawidgetdemo.activity.BaseFragmentActivity;
  */
 public class BaseFragment extends Fragment{
 	protected View mView;
-	protected Handler handler = new Handler();
-//	protected VersionUpdateManager updateDialog;
-	
-	
-	
+
 	/**
 	 * 当fragment和activity关联之后，调用这个方法
 	 */
@@ -41,7 +37,6 @@ public class BaseFragment extends Fragment{
 		super.onCreate(savedInstanceState);
 		Thread.setDefaultUncaughtExceptionHandler(new ApplicationUncaughtHandler(
 				getActivity()));
-//		updateDialog = VersionUpdateManager.getInstance(myActivity);
 	}
     /**
      * 创建fragment中的视图的时候，调用这个方法。

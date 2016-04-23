@@ -38,8 +38,6 @@ import android.util.Log;
 import android.util.Xml;
 import android.webkit.WebView;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.sina.sinawidgetdemo.constant.PreferencesConstant;
 /**
  * 其他工具类
@@ -904,98 +902,6 @@ private static final String TAG = "IOUtils";
 		 }
          
 		return bm;
-	}
-	
-	/**
-	 * WARNNING: Log only for Class Type no check!
-	 * @param obj
-	 * @return obj.toString()
-	 */
-	@Deprecated
-	public static String getObjectString(Object obj) {
-		if (obj == null) {
-			return null;
-		}
-		String objString = "";
-		try {
-			objString = JSON.toJSONString(obj);
-		} catch (Exception e) {
-			objString = "";
-		}
-		return objString;
-	}
-	
-	/**
-	 * WARNNING: Log only for Class Type no check!
-	 * @param obj
-	 * @return obj.toString()
-	 */
-	@Deprecated
-	public static String getObjectString(Collection<Object> objlist) {
-		if (objlist == null) {
-			return null;
-		}
-		String objString = "";
-		try {
-			objString = JSONArray.toJSONString(objlist);
-		} catch (Exception e) {
-			objString = "";
-		}
-		return objString;
-	}
-	
-	public static <T extends Object> boolean compare(T left, T right,
-			Class<T> classOfT) {
-		if (left == null && right == null) {
-			return true;
-		}
-		if (left == null) {
-			return false;
-		}
-		if (right == null) {
-			return false;
-		}
-		String leftString = "";
-		String rightString = null;
-		try {
-			leftString = JSON.toJSONString(left);
-			rightString = JSON.toJSONString(right);
-		} catch (Exception e) {
-			leftString = "";
-			rightString = null;
-		}
-		if (leftString.equalsIgnoreCase(rightString)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	public static <T extends Object> boolean compare(Collection<T> left, Collection<T> right,
-			Class<T> classOfT) {
-		if (left == null && right == null) {
-			return true;
-		}
-		if (left == null) {
-			return false;
-		}
-		if (right == null) {
-			return false;
-		}
-		String leftString = "";
-		String rightString = null;
-		try {
-			leftString = JSONArray.toJSONString(left);
-			rightString = JSONArray.toJSONString(right);
-		} catch (Exception e) {
-			leftString = "";
-			rightString = null;
-		}
-		if (leftString.equalsIgnoreCase(rightString)) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 	
 }

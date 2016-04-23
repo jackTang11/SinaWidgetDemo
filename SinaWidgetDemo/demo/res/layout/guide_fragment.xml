@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
     
-    <com.sina.sina973.custom.viewpagerindicator.IconPageIndicator
+    <com.sina.sinawidgetdemo.custom.viewpagerindicator.IconPageIndicator
 			        android:id="@+id/guide_indicator"
 			        android:layout_height="wrap_content"
 			        android:layout_width="wrap_content"

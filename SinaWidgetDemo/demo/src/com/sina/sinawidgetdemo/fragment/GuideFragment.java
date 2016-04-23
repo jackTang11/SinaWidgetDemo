@@ -36,8 +36,8 @@ public class GuideFragment extends BaseFragment implements OnClickListener{
 	private ViewPager guidePager;
 	private ViewPagerAdapter myAdapter;
 	private List<View> views = new ArrayList<View>();
-//	private int[] viewResouseId = new int[]{R.layout.guide_1,R.layout.guide_2,R.layout.guide_3};
-	private int[] viewResouseId = null;
+	private int[] viewResouseId = new int[]{R.layout.guide_1,R.layout.guide_2,R.layout.guide_3};
+//	private int[] viewResouseId = null;
 	private int pagerCount;
 	private TextView exitButton;
 	

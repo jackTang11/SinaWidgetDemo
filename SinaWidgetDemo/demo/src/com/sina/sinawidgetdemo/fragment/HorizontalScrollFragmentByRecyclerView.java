@@ -230,12 +230,6 @@ public final class HorizontalScrollFragmentByRecyclerView extends BaseFragment i
 
 	}
 
-	Handler mHandler = new Handler() {
-		public void handleMessage(android.os.Message msg) {
-
-		};
-	};
-
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
