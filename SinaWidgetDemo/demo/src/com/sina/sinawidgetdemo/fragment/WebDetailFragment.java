@@ -18,14 +18,13 @@ import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 
 import com.android.overlay.ApplicationUncaughtHandler;
+import com.android.overlay.utils.LogUtils;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
-import com.sina.engine.base.utils.LogUtils;
-import com.sina.sinawidgetdemo.activity.MainActivity;
 import com.sina.sinawidgetdemo.custom.view.CustomLoadView;
 import com.sina.sinawidgetdemo.R;
 

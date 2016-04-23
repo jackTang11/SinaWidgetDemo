@@ -30,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.android.overlay.utils.LogUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView.OnScrollChangedListener;
@@ -37,7 +38,6 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.sina.engine.base.utils.LogUtils;
 import com.sina.sinawidgetdemo.R;
 import com.sina.sinawidgetdemo.activity.BaseFragmentActivity;
 import com.sina.sinawidgetdemo.custom.view.CustomLoadView;

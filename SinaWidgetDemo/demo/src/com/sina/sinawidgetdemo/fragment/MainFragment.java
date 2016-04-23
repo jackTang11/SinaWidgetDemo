@@ -15,11 +15,11 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.android.overlay.utils.LogUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sina.engine.base.manager.EngineManager;
 import com.sina.engine.base.request.listener.RequestDataListener;
 import com.sina.engine.base.request.model.TaskModel;
-import com.sina.engine.base.utils.LogUtils;
 import com.sina.sinawidgetdemo.activity.WebBrowserActivity;
 import com.sina.sinawidgetdemo.constant.IntentConstant;
 import com.sina.sinawidgetdemo.constant.PreferencesConstant;
@@ -283,7 +283,7 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 				}
 				try {
 					Thread.sleep(sleepTime);
-					LogUtils.d("ADLOG", "start fragment sleeptime:"+sleepTime);
+					LogUtils.d("ADLOG", "start fragment sleeptime:" + sleepTime);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

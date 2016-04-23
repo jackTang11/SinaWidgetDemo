@@ -1,10 +1,5 @@
 package com.sina.sinawidgetdemo.fragment;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -22,7 +17,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebSettings.TextSize;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -31,6 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.android.overlay.utils.LogUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -39,16 +34,16 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.sina.engine.base.utils.LogUtils;
 import com.sina.sinawidgetdemo.R;
-import com.sina.sinawidgetdemo.activity.BaseFragmentActivity;
 import com.sina.sinawidgetdemo.custom.view.CustomLoadView;
 import com.sina.sinawidgetdemo.custom.view.OnPullEventListenerTimer;
 import com.sina.sinawidgetdemo.custom.view.ScrolledScrollView;
-import com.sina.sinawidgetdemo.custom.view.ScrolledWebView;
-import com.sina.sinawidgetdemo.usercredit.ListViewScrollObserver;
-import com.sina.sinawidgetdemo.usercredit.ListViewScrollObserver.OnListViewScrollListener;
 import com.sina.sinawidgetdemo.usercredit.SyncHeightLayoutScheduler;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class WListFragment extends BaseFragment implements OnClickListener {
 
