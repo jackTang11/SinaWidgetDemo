@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.android.overlay.utils.LogUtils;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sina.engine.base.manager.EngineManager;
 import com.sina.engine.base.request.listener.RequestDataListener;
 import com.sina.engine.base.request.model.TaskModel;
@@ -487,7 +486,6 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 		guideFragment = null;
 		mExitTime = 0;
 		EngineManager.getInstance().destory();
-		ImageLoader.getInstance().clearMemoryCache();
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {

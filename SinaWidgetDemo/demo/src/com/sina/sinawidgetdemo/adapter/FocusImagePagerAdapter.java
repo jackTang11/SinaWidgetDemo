@@ -8,7 +8,6 @@ package com.sina.sinawidgetdemo.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.sina.sinawidgetdemo.R;
 import com.sina.sinawidgetdemo.custom.autoscrollviewpager.RecyclingPagerAdapter;
 
@@ -28,7 +27,6 @@ public class FocusImagePagerAdapter extends RecyclingPagerAdapter {
 
 	private Context context;
 	private List<Integer> mDataList = new ArrayList<Integer>();
-	private DisplayImageOptions mHeaderImageOptions;
 	private boolean isInfiniteLoop;
 	LayoutInflater inflater;
 

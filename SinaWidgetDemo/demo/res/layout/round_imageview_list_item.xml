@@ -19,12 +19,11 @@
             android:text="圆角图："
             android:textColor="#474747" />
 
-        <com.sina.sinawidgetdemo.custom.view.RoundImageView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/round_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
-            android:background="@drawable/gift_round_shape"
             android:scaleType="centerCrop" />
     </LinearLayout>
     <LinearLayout
@@ -41,12 +40,12 @@
             android:text="圆形图："
             android:textColor="#474747" />
 
-        <com.sina.sinawidgetdemo.custom.view.OvalImageView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/oval_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
-            android:scaleType="centerCrop" /> 
+            android:scaleType="centerCrop" />
     </LinearLayout>
 
 </LinearLayout>

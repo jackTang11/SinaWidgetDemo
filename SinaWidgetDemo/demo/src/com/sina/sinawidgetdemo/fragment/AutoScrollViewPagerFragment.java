@@ -76,7 +76,10 @@ public class AutoScrollViewPagerFragment extends BaseFragment {
 
 			@Override
 			public void onPageSelected(int arg0) {
-
+				if (getActivity() == null || getActivity().isFinishing()
+						|| isDetached() || !isAdded()) {
+					return;
+				}
 				for (int i = 0; i < dotList.size(); i++) {
 					ImageView m = dotList.get(i);
 					LinearLayout.LayoutParams params = (android.widget.LinearLayout.LayoutParams) m

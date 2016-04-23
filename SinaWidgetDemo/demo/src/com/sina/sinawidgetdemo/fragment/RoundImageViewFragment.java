@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -18,13 +19,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.sina.sinawidgetdemo.R;
 import com.sina.sinawidgetdemo.activity.BaseFragmentActivity;
 import com.sina.sinawidgetdemo.custom.view.CustomLoadView;
@@ -46,7 +44,6 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 	private List<String> imageList = new ArrayList<String>();
 	private List<String> page1List = new ArrayList<String>();
 	private List<String> page2List = new ArrayList<String>();
-	private DisplayImageOptions imageOptions;
 	private int mPage = 1;
 	private CustomLoadView loadLayout;
 	private FrameLayout mainLayout;
@@ -84,13 +81,6 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 //				.bitmapConfig(Bitmap.Config.RGB_565)
 //				.imageScaleType(ImageScaleType.EXACTLY)
 //				.build();
-		imageOptions = new DisplayImageOptions.Builder() // 设置图片下载期间显示的图片
-		.showImageForEmptyUri(R.drawable.gift_item_default) // 设置图片Uri为空或是错误的时候显示的图片
-		.showImageOnFail(R.drawable.gift_item_default) // 设置图片加载或解码过程中发生错误显示的图片
-		.cacheInMemory(true) // 设置下载的图片是否缓存在内存中
-		.cacheOnDisc(true) // 设置下载的图片是否缓存在SD卡中
-		// .displayer(new RoundedBitmapDisplayer(20)) // 设置成圆角图片
-		.build();
 	}
 	private void initData(){
 		page1List.add("http://n.sinaimg.cn/transform/20150708/pCcs-fxesssr5496632.png");
@@ -194,60 +184,30 @@ public class RoundImageViewFragment extends BaseFragment implements OnClickListe
 				convertView = LayoutInflater.from(getActivity()).inflate(
 						R.layout.round_imageview_list_item, null, false);
 				holder = new ViewHolder();
-				holder.roundImagview = (ImageView) convertView
+				holder.roundImagview = (SimpleDraweeView) convertView
 						.findViewById(R.id.round_image);
-				holder.ovalImagview = (ImageView) convertView
+				holder.ovalImagview = (SimpleDraweeView) convertView
 						.findViewById(R.id.oval_image);
 				convertView.setTag(holder);
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
-			
-			if(!TextUtils.isEmpty(imgurl)){
+
+			if (!TextUtils.isEmpty(imgurl)) {
 				if (holder.roundImagview != null) {
-					holder.roundImagview.setImageResource(R.drawable.gift_item_default);
-					ImageLoader.getInstance().displayImage(imgurl,
-							holder.roundImagview, imageOptions,
-							new AnimateFirstDisplayListener());
+					holder.roundImagview.setImageURI(Uri.parse(imgurl));
 				}
 				if (holder.ovalImagview != null) {
-					holder.ovalImagview.setImageResource(R.drawable.gift_item_default);
-					ImageLoader.getInstance().displayImage(imgurl,
-							holder.ovalImagview, imageOptions,
-							new AnimateFirstDisplayListener());
+					holder.ovalImagview.setImageURI(Uri.parse(imgurl));
 				}
 			}
-			
+
 			return convertView;
 		}
-		
+
 		private class ViewHolder {
-			public ImageView roundImagview;
-			public ImageView ovalImagview;
-		}
-	}
-	/**
-	 * 图片加载第一次显示监听器
-	 */
-	private static class AnimateFirstDisplayListener extends
-			SimpleImageLoadingListener {
-
-		static final List<String> displayedImages = Collections
-				.synchronizedList(new LinkedList<String>());
-
-		@Override
-		public void onLoadingComplete(String imageUri, View view,
-				Bitmap loadedImage) {
-			if (loadedImage != null) {
-				ImageView imageView = (ImageView) view;
-				// 是否第一次显示
-				boolean firstDisplay = !displayedImages.contains(imageUri);
-				if (firstDisplay) {
-					// 图片淡入效果
-					FadeInBitmapDisplayer.animate(imageView, 500);
-					displayedImages.add(imageUri);
-				}
-			}
+			public SimpleDraweeView roundImagview;
+			public SimpleDraweeView ovalImagview;
 		}
 	}
 	public void resultCallBack() {
