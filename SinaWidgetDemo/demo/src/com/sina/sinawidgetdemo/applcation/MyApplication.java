@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 
 import com.android.overlay.KeepAliveService;
 import com.android.overlay.RunningEnvironment;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -13,7 +14,6 @@ import com.sina.engine.base.config.EngineConfig;
 import com.sina.engine.base.manager.EngineManager;
 import com.sina.sinawidgetdemo.constant.RequestConstant;
 import com.sina.sinawidgetdemo.receiver.NetChangeReceiver;
-import com.sina.sinagame.share.platforms.PlatformManager;
 
 /**
  * application类
@@ -49,10 +49,9 @@ public class MyApplication extends Application {
 			subSystem = RunningEnvironment.getInstance();
 		}
 		subSystem.onCreate(this);
-		PlatformManager.getInstance().onloadPlatformInfos();
 
 		registerNetChangeReceiver();
-		
+		Fresco.initialize(this);
 		startService(KeepAliveService.createIntent(this));
 	}
 

@@ -27,8 +27,6 @@ import com.sina.sinawidgetdemo.constant.StatisticsConstant;
 import com.sina.sinawidgetdemo.fragment.GuideFragment.GuideOnClickListener;
 import com.sina.sinawidgetdemo.request.process.RequestConfigProcess;
 import com.sina.sinawidgetdemo.returnmodel.SwitchConfigModel;
-import com.sina.sinawidgetdemo.sharesdk.AccountInfoManager;
-import com.sina.sinawidgetdemo.sharesdk.SyncReason;
 import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.switchconfig.SwitchConfigManager;
 import com.sina.sinawidgetdemo.usercredit.CheckStateButtonAgent;
@@ -439,8 +437,6 @@ public class MainFragment extends BaseFragment implements OnClickListener,
 				StatisticsConstant.STARTAPP, "", null);
 		LogUtils.d("ENV", "startAppLogic()");
 		ConfigurationManager.getInstance().requestConfigurations();
-		AccountInfoManager.getInstance().requestCurrentAccountInfoForReason(
-				SyncReason.ALL);
 		requestVersionUpdate();
 		new CheckStateButtonAgent(getActivity()).checkNetworkStatus();
 		initAdSDK();

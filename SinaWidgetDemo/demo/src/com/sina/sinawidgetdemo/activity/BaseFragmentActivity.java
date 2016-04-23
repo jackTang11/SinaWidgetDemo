@@ -10,8 +10,6 @@ import android.view.LayoutInflater;
 import com.android.overlay.OnConnectionChangedListener;
 import com.android.overlay.RunningEnvironment;
 import com.android.overlay.connection.ConnectionType;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.sina.sinagame.usercredit.AccountManager;
 import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.usercredit.CheckStateButtonAgent;
 
@@ -79,7 +77,6 @@ public class BaseFragmentActivity extends FragmentActivity implements OnConnecti
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		AccountManager.getInstance().onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override

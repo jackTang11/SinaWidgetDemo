@@ -20,14 +20,11 @@ import com.sina.engine.base.utils.LogUtils;
 import com.sina.sinawidgetdemo.request.process.RequestConfigProcess;
 import com.sina.sinawidgetdemo.returnmodel.ClassifyModel;
 import com.sina.sinawidgetdemo.returnmodel.ConfigModel;
-import com.sina.sinawidgetdemo.sharesdk.Task;
 import com.sina.sinawidgetdemo.utils.CommonUtils;
-import com.sina.sinagame.share.impl.OnAccountAddedListener;
-import com.sina.sinagame.usercredit.AccountItem;
 
 @SuppressWarnings("serial")
 public class ConfigurationManager implements OnLoadListener,
-		OnInitializedListener, OnConnectedListener, OnAccountAddedListener,
+		OnInitializedListener, OnConnectedListener,
 		Serializable {
 
 	protected static ConfigurationManager instance;
@@ -69,19 +66,6 @@ public class ConfigurationManager implements OnLoadListener,
 	}
 
 	@Override
-	public void onAccountAdded(AccountItem accountItem) {
-		LogUtils.d("CONFIGTASK", "onAccountAdded");
-		if (!initialized) {
-			LogUtils.d("CONFIGTASK",
-					"onAccountAdded:initialized=false, no requestConfigurations");
-		} else {
-			LogUtils.d("CONFIGTASK",
-					"onAccountAdded:initialized=true, call requestConfigurations");
-		}
-		requestConfigurations();
-	}
-
-	@Override
 	public void onConnected(ConnectionType type) {
 		LogUtils.d("CONFIGTASK", "onConnected:type=" + type.name());
 		if (initialized) {
@@ -103,32 +87,6 @@ public class ConfigurationManager implements OnLoadListener,
 				.startrRequestConfig(new RequestConfigurationListener());
 	}
 
-	/**
-	 * Reserved.
-	 * 
-	 * @param taskId
-	 * @return
-	 */
-	protected Task getTaskInfo(String taskId) {
-		Task info = null;
-		if (this.savedConfig != null) {
-			List<Task> tasks = this.savedConfig.getTaskList();
-			if (tasks != null) {
-				for (Task task : tasks) {
-					if (task == null || task.getAbsId() == null) {
-						continue;
-					}
-					if (taskId.equalsIgnoreCase(task.getAbsId())) {
-						info = new Task();
-						info.objectUpdate(task);
-						break;
-					}
-				}
-			}
-		}
-		return info;
-	}
-
 	public ConfigModel getCurrentConfig() {
 		if (savedConfig == null) {
 			savedConfig = new ConfigModel();
@@ -136,15 +94,6 @@ public class ConfigurationManager implements OnLoadListener,
 			savedConfig.objectUpdate(configData);
 		}
 		return savedConfig;
-	}
-
-	public List<Task> getConfigTasks() {
-		ConfigModel config = getCurrentConfig();
-		if (config != null && config.getTaskList() != null
-				&& config.getTaskList().size() > 0) {
-			return config.getTaskList();
-		}
-		return new ArrayList<Task>();
 	}
 
 	public String getOfficalForumUrl() {
@@ -170,15 +119,6 @@ public class ConfigurationManager implements OnLoadListener,
 		for (OnConfigurationChangeListener listener : RunningEnvironment
 				.getInstance().getManagers(OnConfigurationChangeListener.class)) {
 			listener.onConfigurationChanged(config);
-		}
-	}
-
-	protected void dispatchConfigurationTasksChanged(final ConfigModel config,
-			final List<Task> tasks) {
-		LogUtils.d("CONFIGTASK", "dispatchConfigurationTasksChanged");
-		for (OnConfigTaskChangeListener listener : RunningEnvironment
-				.getInstance().getManagers(OnConfigTaskChangeListener.class)) {
-			listener.onConfigTaskChanged(config, tasks);
 		}
 	}
 
@@ -273,25 +213,13 @@ public class ConfigurationManager implements OnLoadListener,
 		} else {
 			LogUtils.d("CONFIGTASK", "model no change, ignore it.");
 		}
-		if (!CommonUtils.compare(newConfig.getTaskList(),
-				savedConfig.getTaskList(), Task.class)) {
-			LogUtils.d("CONFIGTASK", "tasks changed");
-			tasksChanged = true;
-		} else {
-			LogUtils.d("CONFIGTASK", "tasks no change, ignore it.");
-		}
-
-		if (modelChanged || tasksChanged) {
+		if (modelChanged) {
 			savedConfig = new ConfigModel();
 			savedConfig.objectUpdate(newConfig);
 		}
 
 		if (modelChanged) {
 			dispatchConfigurationChanged(newConfig);
-		}
-		if (tasksChanged) {
-			dispatchConfigurationTasksChanged(newConfig,
-					newConfig.getTaskList());
 		}
 	}
 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sina.engine.base.db4o.Db4oInterface;
-import com.sina.sinawidgetdemo.sharesdk.Task;
 
 /**
  * 配置信息数据模型
@@ -18,7 +17,6 @@ public class ConfigModel extends BaseModel implements
 
 	private String recodeUrl;
 	private int version;
-	private List<Task> taskList = new ArrayList<Task>();
 	private List<ClassifyModel> classifyList = new ArrayList<ClassifyModel>();
 	private List<EvidenceChannelModel> evidenceList = new ArrayList<EvidenceChannelModel>();
 	private String forumUrl;
@@ -47,15 +45,6 @@ public class ConfigModel extends BaseModel implements
 		return version;
 	}
 
-	public void setTaskList(List<Task> taskList) {
-		this.taskList.clear();
-		this.taskList.addAll(taskList);
-	}
-
-	public List<Task> getTaskList() {
-		return taskList;
-	}
-
 	public void setClassifyList(List<ClassifyModel> classifyList) {
 		this.classifyList.clear();
 		if (classifyList != null)
@@ -82,7 +71,6 @@ public class ConfigModel extends BaseModel implements
 		}
 		setForumUrl(object.getForumUrl());
 		setRecodeUrl(object.getRecodeUrl());
-		setTaskList(object.getTaskList());
 		setVersion(object.getVersion());
 		setClassifyList(object.getClassifyList());
 	}

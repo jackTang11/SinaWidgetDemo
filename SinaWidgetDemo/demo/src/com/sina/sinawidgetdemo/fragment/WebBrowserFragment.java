@@ -30,12 +30,6 @@ import com.sina.sinawidgetdemo.utils.PreferencesUtils;
 import com.sina.sinawidgetdemo.utils.TitleViewUtils;
 import com.sina.sinawidgetdemo.utils.ViewUtils;
 import com.sina.sinawidgetdemo.R;
-import com.sina.sinagame.share.ShareManager;
-import com.sina.sinagame.share.ShareMethod;
-import com.sina.sinagame.share.entity.ShareSelectModel;
-import com.sina.sinagame.share.impl.OneKeyShare;
-import com.sina.sinagame.sharesdk.AuthorizeManager;
-import com.sina.sinagame.usercredit.AccountManager;
 
 /**
  * @author liu_chonghui
@@ -45,7 +39,7 @@ public class WebBrowserFragment extends WebDetailFragment {
 
 	private ImageView moreView;
 	private TextView mAdvanceTv, mBackTv, mRefreshTv;
-	private OneKeyShare myOneKeyShare;
+//	private OneKeyShare myOneKeyShare;
 	private static final int REFRESH_TOOLS = 100100;
 	private View mTitleView;
 	private boolean isCollected;
@@ -148,9 +142,9 @@ public class WebBrowserFragment extends WebDetailFragment {
 	}
 
 	public boolean holdGoBack() {
-		if (myOneKeyShare != null && myOneKeyShare.isShow()) {
-			return true;
-		}
+//		if (myOneKeyShare != null && myOneKeyShare.isShow()) {
+//			return true;
+//		}
 		return super.holdGoBack();
 	}
 
@@ -159,9 +153,9 @@ public class WebBrowserFragment extends WebDetailFragment {
 		flag = super.onKeyDown(keyCode, event);
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if (holdGoBack()) {
-				if (myOneKeyShare != null && myOneKeyShare.isShow()) {
-					myOneKeyShare.close();
-				}
+//				if (myOneKeyShare != null && myOneKeyShare.isShow()) {
+//					myOneKeyShare.close();
+//				}
 				flag = true;
 			}
 		}
@@ -192,15 +186,15 @@ public class WebBrowserFragment extends WebDetailFragment {
 		// if(img!=null)
 		// img = ViewUtils.scaleBitmapImg(img, 300, 300);
 
-		ShareSelectModel item = new ShareSelectModel();
-		String appname = getActivity().getString(R.string.app_name);
-		item.setTitle(titleStr == null || titleStr.length() == 0 ? appname
-				: titleStr);
-		item.setContent(content);
-		item.setImgUrl(url);
-		item.setWeb_url(url);
-		myOneKeyShare.setShareContent(item);
-		myOneKeyShare.show(getActivity(), getClass().getName());
+//		ShareSelectModel item = new ShareSelectModel();
+//		String appname = getActivity().getString(R.string.app_name);
+//		item.setTitle(titleStr == null || titleStr.length() == 0 ? appname
+//				: titleStr);
+//		item.setContent(content);
+//		item.setImgUrl(url);
+//		item.setWeb_url(url);
+//		myOneKeyShare.setShareContent(item);
+//		myOneKeyShare.show(getActivity(), getClass().getName());
 	}
 
 	protected PopupWindow popupWindow_textsize;
@@ -212,11 +206,11 @@ public class WebBrowserFragment extends WebDetailFragment {
 	protected void initTextsizeAn() {
 		if (textsizeAnOpen == null) {
 			textsizeAnOpen = AnimationUtils.loadAnimation(getActivity(),
-					R.anim.menu_in);
+					R.anim.menushow);
 		}
 		if (textsizeAnClose == null) {
 			textsizeAnClose = AnimationUtils.loadAnimation(getActivity(),
-					R.anim.menu_out);
+					R.anim.menuhide);
 		}
 	}
 
@@ -335,11 +329,11 @@ public class WebBrowserFragment extends WebDetailFragment {
 	 * 获取收藏状态
 	 */
 	private void getCollectStatus() {
-		String account = AccountManager.getInstance().getCurrentAccount();
-		if (account == null || TextUtils.isEmpty(account) || url == null
-				|| TextUtils.isEmpty(url)) {
-			return;
-		}
+//		String account = AccountManager.getInstance().getCurrentAccount();
+//		if (account == null || TextUtils.isEmpty(account) || url == null
+//				|| TextUtils.isEmpty(url)) {
+//			return;
+//		}
 		// List<CollectListModel> data = CollectDbProccess.getDbListForId(url,
 		// CollectListModel.COLLECT_WEB_TYPE);
 		// if (data != null && data.size() > 0) {
@@ -354,37 +348,37 @@ public class WebBrowserFragment extends WebDetailFragment {
 
 	protected void initShare() {
 		initTextsizeAn();
-		myOneKeyShare = ShareManager.getInstance()
-				.getWebBrowserPageOneKeyShare(getActivity(), null);
-		myOneKeyShare.setOnClickListener(ShareMethod.FONT,
-				new OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						showPopTextSize(mView);
-						if (myOneKeyShare != null) {
-							myOneKeyShare.close();
-						}
-					}
-				});
-
-		myOneKeyShare.setOnClickListener(ShareMethod.COLLECT,
-				new OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						if (!AuthorizeManager.getInstance().isAuthorized()) {
-							AuthorizeManager.getInstance().doAuthorize(
-									getActivity());
-							return;
-						}
-						if (url == null || TextUtils.isEmpty(url))
-							return;
-						// collect or cancel collect isCollected ? 0 : 1
-						requestCancelOrCollect(!isCollected);
-						if (myOneKeyShare != null) {
-							myOneKeyShare.close();
-						}
-					}
-				});
+//		myOneKeyShare = ShareManager.getInstance()
+//				.getWebBrowserPageOneKeyShare(getActivity(), null);
+//		myOneKeyShare.setOnClickListener(ShareMethod.FONT,
+//				new OnClickListener() {
+//					@Override
+//					public void onClick(View view) {
+//						showPopTextSize(mView);
+//						if (myOneKeyShare != null) {
+//							myOneKeyShare.close();
+//						}
+//					}
+//				});
+//
+//		myOneKeyShare.setOnClickListener(ShareMethod.COLLECT,
+//				new OnClickListener() {
+//					@Override
+//					public void onClick(View view) {
+//						if (!AuthorizeManager.getInstance().isAuthorized()) {
+//							AuthorizeManager.getInstance().doAuthorize(
+//									getActivity());
+//							return;
+//						}
+//						if (url == null || TextUtils.isEmpty(url))
+//							return;
+//						// collect or cancel collect isCollected ? 0 : 1
+//						requestCancelOrCollect(!isCollected);
+//						if (myOneKeyShare != null) {
+//							myOneKeyShare.close();
+//						}
+//					}
+//				});
 	}
 
 	/**
@@ -393,11 +387,11 @@ public class WebBrowserFragment extends WebDetailFragment {
 	 * @param isCollect
 	 */
 	private void requestCancelOrCollect(boolean isCollect) {
-		String account = AccountManager.getInstance().getCurrentAccount();
-		if (account == null || TextUtils.isEmpty(account) || url == null
-				|| TextUtils.isEmpty(url)) {
-			return;
-		}
+//		String account = AccountManager.getInstance().getCurrentAccount();
+//		if (account == null || TextUtils.isEmpty(account) || url == null
+//				|| TextUtils.isEmpty(url)) {
+//			return;
+//		}
 		isCollect = true; // v1.1要求web页中的收藏按钮只有收藏操作无取消操作
 	}
 }

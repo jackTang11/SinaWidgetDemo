@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import com.sina.sinawidgetdemo.constant.StatisticsConstant;
 import com.sina.sinawidgetdemo.returnmodel.SwitchConfigModel;
-import com.sina.sinawidgetdemo.sharesdk.AccountInfoManager;
-import com.sina.sinawidgetdemo.sharesdk.SyncReason;
 import com.sina.sinawidgetdemo.statistics.StatisticsManager;
 import com.sina.sinawidgetdemo.switchconfig.SwitchConfigManager;
 import com.sina.sinawidgetdemo.R;
@@ -116,8 +114,6 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 	@Override
 	public void onResume() {
 		super.onResume();
-		AccountInfoManager.getInstance().requestCurrentAccountInfoForReason(
-				SyncReason.TOTAL_SCORE_AND_USER_TASKS);
 	}
 
 	@Override

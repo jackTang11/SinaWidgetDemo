@@ -30,7 +30,6 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView.OnScrollChangedListener;
@@ -66,7 +65,6 @@ public class AdvanceWListFragment extends BaseFragment implements OnClickListene
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		Fresco.initialize(getActivity());
 		super.onCreate(savedInstanceState);
 		myActivity = (BaseFragmentActivity) getActivity();
 		initImageLoader();
