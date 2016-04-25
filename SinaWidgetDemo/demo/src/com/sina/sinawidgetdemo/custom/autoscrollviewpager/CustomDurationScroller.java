@@ -23,7 +23,7 @@ public class CustomDurationScroller extends Scroller {
 
     /**
      * not exist in android 2.3
-     * 
+     *
      * @param context
      * @param interpolator
      * @param flywheel

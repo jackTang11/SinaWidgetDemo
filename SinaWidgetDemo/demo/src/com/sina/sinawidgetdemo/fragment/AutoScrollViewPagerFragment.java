@@ -69,7 +69,7 @@ public class AutoScrollViewPagerFragment extends BaseFragment {
 		focusadsView.setStopScrollWhenTouch(true);
 		focusadsView.startAutoScroll();// 开启自动滑动
 		focusadsView.setInterval(5000);// 设置时间
-		focusadsView.setCycle(true);// 设置是否循环
+		focusadsView.setCycle(false);// 设置是否循环
 		focusadsView.setDirection(AutoScrollViewPager.RIGHT);// 设置方向
 
 		focusadsView.setOnPageChangeListener(new OnPageChangeListener() {

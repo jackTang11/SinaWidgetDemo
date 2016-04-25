@@ -67,7 +67,7 @@ public class RecycleBin {
    * @param scrap The view to add
    */
   @SuppressLint("NewApi")
-void addScrapView(View scrap, int position, int viewType) {
+  void addScrapView(View scrap, int position, int viewType) {
     if (viewTypeCount == 1) {
       currentScrapViews.put(position, scrap);
     } else {
@@ -81,7 +81,7 @@ void addScrapView(View scrap, int position, int viewType) {
 
   /** Move all views remaining in activeViews to scrapViews. */
   @SuppressLint("NewApi")
-void scrapActiveViews() {
+  void scrapActiveViews() {
     final View[] activeViews = this.activeViews;
     final int[] activeViewTypes = this.activeViewTypes;
     final boolean multipleScraps = viewTypeCount > 1;
@@ -154,3 +154,4 @@ void scrapActiveViews() {
     }
   }
 }
+
