@@ -1,7 +1,6 @@
-package com.sina.sinawidgetdemo.custom.viewpagerindicator;
+package com.sina.sinawidgetdemo.custom.timergallery;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.ArrayAdapter;
 import com.android.imageloadercompact.CompactImageView;
 import com.android.imageloadercompact.ImageLoaderCompact;
 import com.sina.sinawidgetdemo.R;
-import com.sina.sinawidgetdemo.custom.timergallery.JumpableImage;
 
 import java.util.ArrayList;
 import java.util.List;

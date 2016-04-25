@@ -1,22 +1,16 @@
 package com.sina.sinawidgetdemo.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sina.sinawidgetdemo.R;
 import com.sina.sinawidgetdemo.custom.timergallery.JumpableImage;
+import com.sina.sinawidgetdemo.custom.timergallery.SpecialSellingGalleryAdapter;
 import com.sina.sinawidgetdemo.custom.timergallery.TimerGallery;
-import com.sina.sinawidgetdemo.custom.view.FlowLayout;
-import com.sina.sinawidgetdemo.custom.viewpagerindicator.SpecialSellingGalleryAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
