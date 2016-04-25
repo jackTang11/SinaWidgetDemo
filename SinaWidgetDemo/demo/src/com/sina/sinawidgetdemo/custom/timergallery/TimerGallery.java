@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageView;
@@ -92,6 +93,28 @@ public class TimerGallery extends LinearLayout {
 		}
 		addView(view);
 
+		setOnItemSelectedListener(new TimerGalleryItemSelector());
+	}
+
+	class TimerGalleryItemSelector implements AdapterView.OnItemSelectedListener {
+		protected boolean flag = false;
+
+		@Override
+		public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
+			if (flag) {
+				onTimerGalleryItemSelected(position);
+			}
+			flag = true;
+		}
+
+		@Override
+		public void onNothingSelected(AdapterView<?> parent) {
+
+		}
+	}
+
+	protected void onTimerGalleryItemSelected(int position) {
+		onItemSelected(position);
 	}
 
 	public void onHiddenChanged(boolean hidden) {

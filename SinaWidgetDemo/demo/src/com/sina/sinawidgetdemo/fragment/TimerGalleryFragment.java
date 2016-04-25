@@ -69,32 +69,17 @@ public class TimerGalleryFragment extends BaseFragment {
 			gallery.setCycle(false);
 			gallery.init(getActivity(), focusImages);
 			SpecialSellingGalleryAdapter bigAdapter;
-			bigAdapter = new SpecialSellingGalleryAdapter(getActivity(), focusImages);
+			bigAdapter = new SpecialSellingGalleryAdapter(
+					getActivity(), focusImages);
 			gallery.setAdapter(bigAdapter);
 			gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				}
 			});
-			gallery.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-				protected boolean flag = false;
-
-				@Override
-				public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
-					if (flag && gallery != null) {
-						gallery.onItemSelected(position);
-					}
-					flag = true;
-				}
-
-				@Override
-				public void onNothingSelected(AdapterView<?> parent) {
-
-				}
-			});
 			bannerLayout.addView(gallery);
+			bannerLayout.invalidate();
 		}
-		bannerLayout.invalidate();
 	}
 
 
