@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.android.imageloadercompact.ImageLoaderCompact;
 import com.android.overlay.KeepAliveService;
 import com.android.overlay.RunningEnvironment;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -31,7 +32,7 @@ public class MyApplication extends Application {
 		}
 		subSystem.onCreate(this);
 
-		Fresco.initialize(this);
+		ImageLoaderCompact.getInstance().init(this);
 		startService(KeepAliveService.createIntent(this));
 	}
 

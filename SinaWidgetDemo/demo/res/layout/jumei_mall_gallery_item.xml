@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- 美妆商城入口图；商城banner 增加占位图 -->
+    <!--<ImageView-->
+        <!--android:id="@+id/product_image"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/transparent"-->
+        <!--android:scaleType="fitXY" />-->
+    <com.android.imageloadercompact.CompactImageView
+        xmlns:compact="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/product_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY" />
+<!--
+    <ImageView
+        android:id="@+id/social_special_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/social_index_banner_huxing_bg"
+        android:visibility="gone" />
+-->
+</RelativeLayout>

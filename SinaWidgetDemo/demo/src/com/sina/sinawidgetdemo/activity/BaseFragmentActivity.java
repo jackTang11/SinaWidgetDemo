@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 
+import com.android.imageloadercompact.ImageLoaderCompact;
 import com.android.overlay.OnConnectionChangedListener;
 import com.android.overlay.RunningEnvironment;
 import com.android.overlay.connection.ConnectionType;
@@ -19,11 +20,12 @@ import com.sina.sinawidgetdemo.usercredit.CheckStateButtonAgent;
  * 
  */
 public class BaseFragmentActivity extends FragmentActivity implements OnConnectionChangedListener {
-	public LayoutInflater inflater;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		inflater = LayoutInflater.from(this);
+		if (!ImageLoaderCompact.getInstance().isInitialized()) {
+			ImageLoaderCompact.getInstance().onStart();
+		}
 	}
 
 	@Override
