@@ -54,6 +54,7 @@ public class TimerGallery extends LinearLayout {
 		// initConfig(context);
 	}
 	private CustomerTimer timer;
+	int imageSize;
 
 	public void init(Context context, List<JumpableImage> mFocusImageList) {
 		inflater = (LayoutInflater) context
@@ -67,7 +68,7 @@ public class TimerGallery extends LinearLayout {
         select = ((BitmapDrawable) getResources().getDrawable(
                 R.drawable.point_selected)).getBitmap();
 		this.mFocusImageList = mFocusImageList;
-		int imageSize = mFocusImageList.size();
+		imageSize = mFocusImageList.size();
 		if (imageSize > 1) {
 			gallery.onKeyDown(KeyEvent.KEYCODE_DPAD_RIGHT, null);//增加滑动效果
 			point.setVisibility(View.VISIBLE);
@@ -226,6 +227,14 @@ public class TimerGallery extends LinearLayout {
 	public void onItemSelected(int position){
 		positionIndex = position % mFocusImageList.size();
 		point.setImageBitmap(drawPoint(mFocusImageList.size(), position % mFocusImageList.size()));// 绘制点
+
+		if (gallery != null) {
+			if (positionIndex == imageSize - 1) {
+				gallery.setTouchEnable(false);
+			} else {
+				gallery.setTouchEnable(true);
+			}
+		}
 	}
 
 	/*

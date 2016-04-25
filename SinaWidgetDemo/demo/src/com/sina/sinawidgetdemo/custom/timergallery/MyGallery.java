@@ -1,9 +1,11 @@
 package com.sina.sinawidgetdemo.custom.timergallery;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.ViewParent;
 import android.widget.Gallery;
 
 public class MyGallery extends Gallery {
@@ -41,5 +43,20 @@ public class MyGallery extends Gallery {
 //		return super.onScroll(e1, e2, distanceX, distanceY);
 //	}
 
+    boolean touchEnable = true;
 
+    public void setTouchEnable(boolean enable) {
+        touchEnable = enable;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return touchEnable ? super.onInterceptTouchEvent(ev) : false;
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        return touchEnable ? super.onTouchEvent(ev) : false;
+    }
 }

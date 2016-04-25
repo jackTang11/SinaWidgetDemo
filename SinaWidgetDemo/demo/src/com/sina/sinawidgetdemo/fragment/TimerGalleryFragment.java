@@ -40,6 +40,7 @@ public class TimerGalleryFragment extends BaseFragment {
 	List<JumpableImage> focusImages = new ArrayList<JumpableImage>();
 
 	private void initData(){
+		focusImages.clear();
 		JumpableImage image1 = new JumpableImage();
 		image1.img="http://github.com/liuchonghui/SinaWidgetDemo/blob/master/SinaWidgetDemo/demo/res/drawable-hdpi/banner1.jpg";
 		JumpableImage image2 = new JumpableImage();
@@ -60,7 +61,7 @@ public class TimerGalleryFragment extends BaseFragment {
 		LinearLayout bannerLayout = (LinearLayout) view.findViewById(R.id.main_layout);
 		if (focusImages != null && focusImages.size() != 0) {
 			gallery = new TimerGallery(getActivity());
-			gallery.setCycle(false);
+			gallery.setCycle(true);
 			gallery.init(getActivity(), focusImages);
 			SpecialSellingGalleryAdapter bigAdapter;
 			bigAdapter = new SpecialSellingGalleryAdapter(
