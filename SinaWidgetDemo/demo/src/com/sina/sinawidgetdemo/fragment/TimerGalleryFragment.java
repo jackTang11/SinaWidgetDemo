@@ -59,11 +59,14 @@ public class TimerGalleryFragment extends BaseFragment {
 		focusImages.add(image3);
 		focusImages.add(image4);
 	}
-	
+
+	TimerGallery gallery;
+
 	private void initView(View view){
 		LinearLayout bannerLayout = (LinearLayout) view.findViewById(R.id.main_layout);
 		if (focusImages != null && focusImages.size() != 0) {
-			final TimerGallery gallery = new TimerGallery(getActivity());
+			gallery = new TimerGallery(getActivity());
+			gallery.setCycle(false);
 			gallery.init(getActivity(), focusImages);
 			SpecialSellingGalleryAdapter bigAdapter;
 			bigAdapter = new SpecialSellingGalleryAdapter(getActivity(), focusImages);
@@ -78,7 +81,7 @@ public class TimerGalleryFragment extends BaseFragment {
 
 				@Override
 				public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
-					if (flag) {
+					if (flag && gallery != null) {
 						gallery.onItemSelected(position);
 					}
 					flag = true;
@@ -94,6 +97,12 @@ public class TimerGalleryFragment extends BaseFragment {
 		bannerLayout.invalidate();
 	}
 
-	
-	
+
+	@Override
+	public void onHiddenChanged(boolean hidden) {
+		super.onHiddenChanged(hidden);
+		if (gallery != null) {
+			gallery.onHiddenChanged(hidden);
+		}
+	}
 }

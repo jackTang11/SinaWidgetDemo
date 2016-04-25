@@ -66,13 +66,21 @@ public class TimerGallery extends LinearLayout {
         select = ((BitmapDrawable) getResources().getDrawable(
                 R.drawable.point_selected)).getBitmap();
 		this.mFocusImageList = mFocusImageList;
-		if (mFocusImageList.size() > 1) {
+		int imageSize = mFocusImageList.size();
+		if (imageSize > 1) {
 			gallery.onKeyDown(KeyEvent.KEYCODE_DPAD_RIGHT, null);//增加滑动效果
 			point.setVisibility(View.VISIBLE);
 			point.setImageBitmap(drawPoint(mFocusImageList.size(), 0));
 			positionIndex = 0;		
 			if (timer == null) {
-				timer = new CustomerTimer(Long.MAX_VALUE, BANNER_AUTO_PLAY_INTERVAL);
+				int millisInFuture = 0;
+				if (!isCycle) {
+					millisInFuture = Math.min(imageSize * BANNER_AUTO_PLAY_INTERVAL,
+							Integer.MAX_VALUE);
+				} else {
+					millisInFuture = Integer.MAX_VALUE;
+				}
+				timer = new CustomerTimer(millisInFuture, BANNER_AUTO_PLAY_INTERVAL);
 			}
 			timer.start();
 		}else{
@@ -84,6 +92,14 @@ public class TimerGallery extends LinearLayout {
 		}
 		addView(view);
 
+	}
+
+	public void onHiddenChanged(boolean hidden) {
+		if (hidden) {
+			suspendBanner();
+		} else {
+			restartBanner();
+		}
 	}
 
 	/**
@@ -102,6 +118,16 @@ public class TimerGallery extends LinearLayout {
 		if(this.mFocusImageList != null && this.mFocusImageList.size() > 0) {
 			this.mIsActive = true;
 		}
+	}
+
+	boolean isCycle = true;
+
+	public boolean isCycle() {
+		return isCycle;
+	}
+
+	public void setCycle(boolean isCycle) {
+		this.isCycle = isCycle;
 	}
 
 	public void setImageList(List<JumpableImage> mFocusImageList) {
