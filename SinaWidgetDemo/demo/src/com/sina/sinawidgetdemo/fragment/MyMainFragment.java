@@ -23,7 +23,7 @@ import com.sina.sinawidgetdemo.R;
 public class MyMainFragment extends BaseFragment implements OnClickListener{
 
 	 private HomeFragment homeFragment;
-	 private GiftFragment giftFragment;
+	 private TimerGalleryFragment giftFragment;
 	 private MoreFragment moreFragment;
 	 private TextView homeTagView,giftTagView,moreTagView;
 	 public int clickId;
@@ -147,7 +147,7 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 		FragmentManager fm = getChildFragmentManager();
 		FragmentTransaction fragTransaction = fm.beginTransaction();
 		homeFragment = new HomeFragment();
-		giftFragment = new GiftFragment();
+		giftFragment = new TimerGalleryFragment();
 		moreFragment = new MoreFragment();
 		fragTransaction.add(R.id.my_main_fragment_content, homeFragment);
 	    fragTransaction.commitAllowingStateLoss();
@@ -175,7 +175,7 @@ public class MyMainFragment extends BaseFragment implements OnClickListener{
 		   break;
 		   case R.id.main_fragment_title_gift:
 			   if (giftFragment == null) {
-				   giftFragment = new GiftFragment();
+				   giftFragment = new TimerGalleryFragment();
 			   }
 			   fragTransaction.replace(R.id.my_main_fragment_content, giftFragment);
 		   break;

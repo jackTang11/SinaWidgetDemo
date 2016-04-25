@@ -32,4 +32,6 @@
     <dimen name="share_button_padding_right">8dp</dimen>
     <dimen name="divider_width">10dp</dimen>
 
+    <!-- TimerGallery -->
+    <dimen name="foucus_image_gallery_height">147dp</dimen>
 </resources>
