@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sina.sinawidgetdemo.custom.timergallery.MyGalleryContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mygallery_parent"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
@@ -29,4 +31,4 @@
             android:layout_gravity="right|center_vertical" />
     </FrameLayout>
 
-</LinearLayout>
+</com.sina.sinawidgetdemo.custom.timergallery.MyGalleryContainer>

@@ -85,4 +85,12 @@ public class TimerGalleryFragment extends BaseFragment {
 			gallery.onHiddenChanged(hidden);
 		}
 	}
+
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		super.setUserVisibleHint(isVisibleToUser);
+		if (gallery != null) {
+			gallery.setUserVisibleHint(isVisibleToUser);
+		}
+	}
 }

@@ -22,7 +22,6 @@ import java.util.List;
 
 public class TimerGallery extends LinearLayout {
 
-	private LayoutInflater inflater;
 	/**
 	 * 正常状态的点
 	 */
@@ -31,9 +30,11 @@ public class TimerGallery extends LinearLayout {
 	 * 选中的点
 	 */
 	private Bitmap select;
+	private MyGalleryContainer container;
 	private MyGallery gallery;
 	private ImageView point;
 	private List<JumpableImage> mFocusImageList;
+	private int lastPositionIndex = 0;
 	private int positionIndex = 0;
 	private static final int BANNER_AUTO_PLAY_INTERVAL = 4000;
 
@@ -57,11 +58,11 @@ public class TimerGallery extends LinearLayout {
 	int imageSize;
 
 	public void init(Context context, List<JumpableImage> mFocusImageList) {
-		inflater = (LayoutInflater) context
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(R.layout.specaltime_card_banner_layout,
+		View view = LayoutInflater.from(context).inflate(R.layout.specaltime_card_banner_layout,
 				null);
+		container = (MyGalleryContainer) view.findViewById(R.id.mygallery_parent);
 		gallery = (MyGallery) view.findViewById(R.id.big_gallery);
+		gallery.setMyGalleryContainer(container);
 		point = (ImageView) view.findViewById(R.id.point);
 		normal = ((BitmapDrawable) getResources().getDrawable(
 				R.drawable.point_normal)).getBitmap();
@@ -73,7 +74,8 @@ public class TimerGallery extends LinearLayout {
 			gallery.onKeyDown(KeyEvent.KEYCODE_DPAD_RIGHT, null);//增加滑动效果
 			point.setVisibility(View.VISIBLE);
 			point.setImageBitmap(drawPoint(mFocusImageList.size(), 0));
-			positionIndex = 0;		
+			positionIndex = 0;
+			lastPositionIndex = -1;
 			if (timer == null) {
 				int millisInFuture = 0;
 				if (!isCycle) {
@@ -91,6 +93,7 @@ public class TimerGallery extends LinearLayout {
 				timer.cancel();
 			}
 			positionIndex = 0;
+			lastPositionIndex = -1;
 		}
 		addView(view);
 
@@ -126,12 +129,23 @@ public class TimerGallery extends LinearLayout {
 		}
 	}
 
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		if (!isVisibleToUser) {
+			suspendBanner();
+		} else {
+			restartBanner();
+		}
+	}
+
 	/**
 	 * 当banner不可见时,暂停定时器
 	 */
 	public void suspendBanner() {
 		if(this.mFocusImageList != null && this.mFocusImageList.size() > 0) {
 			this.mIsActive = false;
+			if (gallery != null) {
+				gallery.cleanState();
+			}
 		}
 	}
 
@@ -141,6 +155,9 @@ public class TimerGallery extends LinearLayout {
 	public void restartBanner() {
 		if(this.mFocusImageList != null && this.mFocusImageList.size() > 0) {
 			this.mIsActive = true;
+			if (gallery != null) {
+				gallery.cleanState();
+			}
 		}
 	}
 
@@ -230,11 +247,15 @@ public class TimerGallery extends LinearLayout {
 
 		if (gallery != null) {
 			if (positionIndex == imageSize - 1) {
-				gallery.setTouchEnable(false);
+				gallery.setDisableDpadMotion(false, true);
+			} else if (positionIndex == 0) {
+				gallery.setDisableDpadMotion(true, false);
 			} else {
-				gallery.setTouchEnable(true);
+				gallery.setDisableDpadMotion(false, false);
 			}
 		}
+
+		lastPositionIndex = positionIndex;
 	}
 
 	/*
