@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.sina.sinawidgetdemo.R;
 import com.sina.sinawidgetdemo.custom.timergallery.JumpableImage;
 import com.sina.sinawidgetdemo.custom.timergallery.SpecialSellingGalleryAdapter;
-import com.sina.sinawidgetdemo.custom.timergallery.TimerGallery;
+import com.sina.sinawidgetdemo.custom.timergallery.BannerLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,12 +60,12 @@ public class TimerGalleryFragment extends BaseFragment {
 		focusImages.add(image4);
 	}
 
-	TimerGallery gallery;
+	BannerLayout gallery;
 
 	private void initView(View view){
 		LinearLayout bannerLayout = (LinearLayout) view.findViewById(R.id.main_layout);
 		if (focusImages != null && focusImages.size() != 0) {
-			gallery = new TimerGallery(getActivity());
+			gallery = new BannerLayout(getActivity());
 			gallery.init(getActivity(), focusImages);
 			SpecialSellingGalleryAdapter bigAdapter;
 			bigAdapter = new SpecialSellingGalleryAdapter(
