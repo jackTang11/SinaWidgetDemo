@@ -20,10 +20,11 @@ import android.view.ViewGroup;
 import com.sina.sinawidgetdemo.R;
 import com.sina.sinawidgetdemo.custom.viewpagerindicator.TabPageIndicator;
 import com.sina.sinawidgetdemo.custom.viewpagerindicator.TabPageIndicator.OnTabCollListener;
+import com.sina.sinawidgetdemo.custom.viewpagerindicator.TabTextChangeIndicator;
 
 public class HomeFragment extends BaseFragment {
 	private ViewPager mHomePager;
-	private TabPageIndicator mHomeIndicator;
+	private TabTextChangeIndicator mHomeIndicator;
 	private MyPagerAdapter myPagerAdapter;
 
 	private List<Fragment> mFragmentList = new ArrayList<Fragment>();
@@ -86,7 +87,7 @@ public class HomeFragment extends BaseFragment {
 		myPagerAdapter.setData(mFragmentList, mTitleList);
 		mHomePager.setAdapter(myPagerAdapter);
 
-		mHomeIndicator = (TabPageIndicator) view.findViewById(R.id.home_indicator);
+		mHomeIndicator = (TabTextChangeIndicator) view.findViewById(R.id.home_indicator);
 		mHomeIndicator.setViewPager(mHomePager);
 	}
 
@@ -110,24 +111,24 @@ public class HomeFragment extends BaseFragment {
 
 			}
 		});
-		mHomeIndicator.setOnTabCollListener(new OnTabCollListener() {
-
-			@Override
-			public void OnTabColl(int coll_dir) {
-				// TODO Auto-generated method stub
-				switch (coll_dir) {
-				// none
-				case 0:
-					break;
-				// left
-				case 1:
-					break;
-				// rigth
-				case 2:
-					break;
-				}
-			}
-		});
+//		mHomeIndicator.setOnTabCollListener(new OnTabCollListener() {
+//
+//			@Override
+//			public void OnTabColl(int coll_dir) {
+//				// TODO Auto-generated method stub
+//				switch (coll_dir) {
+//				// none
+//				case 0:
+//					break;
+//				// left
+//				case 1:
+//					break;
+//				// rigth
+//				case 2:
+//					break;
+//				}
+//			}
+//		});
 	}
 
 	public void flushPage() {
