@@ -58,6 +58,8 @@ public class HomeFragment extends BaseFragment {
 	private void initData() {
 		mTitleList.add("自动滑动ViewPager");
 		mFragmentList.add(new AutoScrollViewPagerFragment());
+		mTitleList.add("测试LiveListView");
+		mFragmentList.add(new LiveListViewFragment());
 		mTitleList.add("自动滑动Gallery");
 		mFragmentList.add(new TimerGalleryFragment());
 		mTitleList.add("横向滑动新");
