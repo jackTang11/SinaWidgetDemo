@@ -1,5 +1,6 @@
 package com.sina.sinawidgetdemo.fragment;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -25,6 +26,7 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.sina.sinawidgetdemo.activity.ImageBrowserActivity;
 import com.sina.sinawidgetdemo.constant.PreferencesConstant;
 import com.sina.sinawidgetdemo.custom.view.SegmentedRadioGroup;
 import com.sina.sinawidgetdemo.utils.PreferencesUtils;
@@ -109,6 +111,8 @@ public class WebBrowserFragment extends WebDetailFragment {
 		} else if (R.id.web_refresh == id) {
 			// 刷新
 			refeshLogic();
+			Intent intent = new Intent(getActivity(), ImageBrowserActivity.class);
+			getActivity().startActivity(intent);
 		}
 	}
 

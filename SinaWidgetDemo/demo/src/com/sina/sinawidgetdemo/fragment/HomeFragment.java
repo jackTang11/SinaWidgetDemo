@@ -24,7 +24,7 @@ import com.sina.sinawidgetdemo.custom.viewpagerindicator.TabTextChangeIndicator;
 
 public class HomeFragment extends BaseFragment {
 	private ViewPager mHomePager;
-	private TabTextChangeIndicator mHomeIndicator;
+	private TabPageIndicator mHomeIndicator;
 	private MyPagerAdapter myPagerAdapter;
 
 	private List<Fragment> mFragmentList = new ArrayList<Fragment>();
@@ -87,7 +87,7 @@ public class HomeFragment extends BaseFragment {
 		myPagerAdapter.setData(mFragmentList, mTitleList);
 		mHomePager.setAdapter(myPagerAdapter);
 
-		mHomeIndicator = (TabTextChangeIndicator) view.findViewById(R.id.home_indicator);
+		mHomeIndicator = (TabPageIndicator) view.findViewById(R.id.home_indicator);
 		mHomeIndicator.setViewPager(mHomePager);
 	}
 
@@ -204,6 +204,7 @@ public class HomeFragment extends BaseFragment {
 			Fragment ff = (Fragment) super.instantiateItem(container, position);
 			return ff;
 		}
+
 	}
 
 	// @Override

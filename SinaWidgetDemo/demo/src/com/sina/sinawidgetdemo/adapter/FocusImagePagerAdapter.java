@@ -9,9 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sina.sinawidgetdemo.R;
+import com.sina.sinawidgetdemo.activity.ImageBrowserActivity;
+import com.sina.sinawidgetdemo.activity.WebBrowserActivity;
+import com.sina.sinawidgetdemo.activity.WebDetailActivity;
 import com.sina.sinawidgetdemo.custom.autoscrollviewpager.RecyclingPagerAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -82,7 +86,10 @@ public class FocusImagePagerAdapter extends RecyclingPagerAdapter {
 
 			@Override
 			public void onClick(View v) {
-				 
+				Intent intent = new Intent(context, WebBrowserActivity.class);
+				intent.putExtra("url", "www.sina.com");
+				intent.putExtra("title", "www.sina.com");
+				context.startActivity(intent);
 			}
 		});
 		// holder.imageView.setImageResource(imageIdList

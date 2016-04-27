@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white" >
 
-        <com.sina.sinawidgetdemo.custom.viewpagerindicator.TabTextChangeIndicator
+        <com.sina.sinawidgetdemo.custom.viewpagerindicator.TabPageIndicator
             android:id="@+id/home_indicator"
             android:layout_width="fill_parent"
             android:layout_height="50dp" />
