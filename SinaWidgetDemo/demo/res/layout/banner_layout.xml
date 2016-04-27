@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sina.sinawidgetdemo.custom.timergallery.BannerGalleryContainer
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/banner_container"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#FFFFFF"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-
-    <!-- spacing必须加 不然图片会重叠-->
-    <com.sina.sinawidgetdemo.custom.timergallery.BannerGallery
-        android:id="@+id/banner_gallery"
+    <LinearLayout android:id="@+id/banner_toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#77ff99"
+        android:orientation="vertical">
+        <!-- 放置顶条内容 -->
+    </LinearLayout>
+    <com.sina.sinawidgetdemo.custom.timergallery.BannerGalleryContainer
+        android:id="@+id/banner_container"
         android:layout_width="fill_parent"
-        android:soundEffectsEnabled="false"
-        android:layout_height="@dimen/foucus_image_gallery_height"
-        android:fadingEdge="none"
-        android:gravity="center"
-        android:unselectedAlpha="1"
-        android:spacing="-1px" />
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/point_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="28dip"
-        android:layout_marginTop="-28dip" >
+        <!-- spacing必须加 不然图片会重叠-->
+        <com.sina.sinawidgetdemo.custom.timergallery.BannerGallery
+            android:id="@+id/banner_gallery"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/foucus_image_gallery_height"
+            android:fadingEdge="none"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            android:spacing="-1px"
+            android:unselectedAlpha="1" />
 
-        <ImageView
-            android:id="@+id/point"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical" />
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/point_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="28dip"
+            android:layout_marginTop="-28dip">
 
-</com.sina.sinawidgetdemo.custom.timergallery.BannerGalleryContainer>
+            <ImageView
+                android:id="@+id/point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical" />
+        </FrameLayout>
+
+    </com.sina.sinawidgetdemo.custom.timergallery.BannerGalleryContainer>
+</LinearLayout>
