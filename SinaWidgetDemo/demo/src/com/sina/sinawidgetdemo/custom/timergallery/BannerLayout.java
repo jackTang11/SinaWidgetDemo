@@ -161,6 +161,16 @@ public class BannerLayout extends LinearLayout {
 		}
 	}
 
+	boolean marginScroll;
+
+	public boolean isMarginScroll() {
+		return this.marginScroll;
+	}
+
+	public void enableMarginScroll() {
+		this.marginScroll = true;
+	}
+
 	boolean isCycle = true;
 
 	public boolean isCycle() {
@@ -245,7 +255,7 @@ public class BannerLayout extends LinearLayout {
 		positionIndex = position % mFocusImageList.size();
 		point.setImageBitmap(drawPoint(mFocusImageList.size(), position % mFocusImageList.size()));// 绘制点
 
-		if (gallery != null) {
+		if (gallery != null && marginScroll) {
 			if (positionIndex == imageSize - 1) {
 				gallery.setDisableDpadMotion(false, true);
 			} else if (positionIndex == 0) {
