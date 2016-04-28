@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <com.sina.sinawidgetdemo.custom.view.pairscrollview.PairScrollView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.sina.sinawidgetdemo.custom.view.pairscrollview.CustomLinearLayout
+            android:id="@+id/custom_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/toobar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff9977"
+                android:padding="8dp"
+                android:text="Toolbar" />
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </com.sina.sinawidgetdemo.custom.view.pairscrollview.CustomLinearLayout>
+    </com.sina.sinawidgetdemo.custom.view.pairscrollview.PairScrollView>
+
+</RelativeLayout>
